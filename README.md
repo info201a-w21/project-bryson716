@@ -33,7 +33,7 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
   >Open Sourcing Mental Illness (OSMI) is a non-profit organization that helps raise awareness about mental health in the tech industry. The data helps offer the perspectives of the mental health issues that many tech people face.
   * How many observations (rows) are in your data?
-  
+
   * How many features (columns) are in the data?
 
   * What questions (from above) can be answered using the data in this dataset?
