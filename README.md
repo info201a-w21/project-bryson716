@@ -39,10 +39,10 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * How many observations (rows) are in your data?
   * How many features (columns) are in the data?
   * What questions (from above) can be answered using the data in this dataset?
-* Caroline (title)
-  * Where did you download the data (e.g., a web URL)?
-  * How was the data collected or generated?
-  * Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
-  * How many observations (rows) are in your data?
-  * How many features (columns) are in the data?
-  * What questions (from above) can be answered using the data in this dataset?
+* GBD Results Tool
+  * The data CSV was downloaded using a [web URL](https://s3.healthdata.org/gbd-api-2019-public/c96f6bc830512de44d86f3d5d38ff0f9_files/IHME-GBD_2019_DATA-c96f6bc8-3.zip).
+  * The data was collected through a variety of methods, including censuses, vital registrations, surveys, and registries. GBD prides itself on the diversity of its data, also citing sources like verbal interviews.
+  * Because the GBD draws data from over 90,000 sources, the data has been collected by people ranging from those who work under major organizations like the World Health Organization (WHO) to local collaborators that are part of the GBD's network. This specific dataset revolves around the different mental illnesses people suffer from worldwide and includes factors such as their ethnicity, sex, and age.
+  * There are 500,000 observations.
+  * There are 10 features.
+  * This data can be used to answer the two questions regarding the demographics of those that suffer from mental illnesses, as well as the one asking which mental illness is the most prevalent globally.
