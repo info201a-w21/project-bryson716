@@ -25,18 +25,14 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * How many observations (rows) are in your data?
   * How many features (columns) are in the data?
   * What questions (from above) can be answered using the data in this dataset?
-* Nina (title)
-  * Where did you download the data (e.g., a web URL)?
-  > I downloaded a series of OSMI Mental Health in Tech Survey datasets on the Kaggle website.
-  * How was the data collected or generated?
-  > OSMI collected online surveys from random people who work in the tech industry.  
-  * Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
-  >Open Sourcing Mental Illness (OSMI) is a non-profit organization that helps raise awareness about mental health in the tech industry. The data helps offer the perspectives of the mental health issues that many tech people face.
-  * How many observations (rows) are in your data?
-  
-  * How many features (columns) are in the data?
+* **OMSI Mental Health in Tech Surveys**
+  * A series of OSMI Mental Health in Tech Survey datasets were downloaded via the [Kaggle website](https://www.kaggle.com/osmihelp).
+  * OSMI collected online surveys from random people who work in the tech industry.  
+  * Open Sourcing Mental Illness (OSMI) is a non-profit organization that helps raise awareness about mental health in the tech industry. The data helps offer the perspectives of the mental health issues that many tech people face.
+  * There were 180-1433 observations from OSMI Mental Health in Tech Surveys 2016-2020.
+  * There were 82-123 features in the data.
+  * This dataset can help us find the answers on how many people who work in the tech industry are affected by mental illnesses, whether there are disparities in race, and what types of mental illnesses these tech people face. 
 
-  * What questions (from above) can be answered using the data in this dataset?
 * Adrian (title)
   * Where did you download the data (e.g., a web URL)?
   * How was the data collected or generated?
@@ -44,7 +40,7 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * How many observations (rows) are in your data?
   * How many features (columns) are in the data?
   * What questions (from above) can be answered using the data in this dataset?
-* GBD Results Tool
+* **GBD Results Tool**
   * The data CSV was downloaded using a [web URL](https://s3.healthdata.org/gbd-api-2019-public/c96f6bc830512de44d86f3d5d38ff0f9_files/IHME-GBD_2019_DATA-c96f6bc8-3.zip).
   * The data was collected through a variety of methods, including censuses, vital registrations, surveys, and registries. GBD prides itself on the diversity of its data, also citing sources like verbal interviews.
   * Because the GBD draws data from over 90,000 sources, the data has been collected by people ranging from those who work under major organizations like the World Health Organization (WHO) to local collaborators that are part of the GBD's network. This specific dataset revolves around the different mental illnesses people suffer from worldwide and includes factors such as their ethnicity, sex, and age.
