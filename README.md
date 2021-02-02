@@ -18,13 +18,13 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * What are the most prevalent mental illnesses in society?
 
   ### Finding Data
-* Morgan (title)
-  * Where did you download the data (e.g., a web URL)?
-  * How was the data collected or generated?
-  * Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
-  * How many observations (rows) are in your data?
-  * How many features (columns) are in the data?
-  * What questions (from above) can be answered using the data in this dataset?
+* **2018 Mental Health Client-level Data**
+  * We downloaded the data from [SAMHDA](https://www.datafiles.samhsa.gov/study-dataset/mental-health-client-level-data-2018-mh-cld-2018-ds0001-nid19104), a data archive for the Substance Abuse and Mental Health Services Administration.
+  * The data was collected from clients who receive mental health services provided/funded by state mental health agencies (SMHA).
+  * The data focuses on clients as individual rows. It is meant to show what services people are receiving for mental health through the state. Data was collected by each state's SMHA individually and combined to form a record of 2018. It is important to note that some states and territories were excluded from data collection (see note on website).
+  * There are 6213791 observations in this dataset.
+  * There are 40 features in this dataset.
+  * This dataset can be used to help answer questions relating to demographic disparities in mental illness diagnosis and treatment.
 * **OMSI Mental Health in Tech Surveys**
   * A series of OSMI Mental Health in Tech Survey datasets were downloaded via the [Kaggle website](https://www.kaggle.com/osmihelp).
   * OSMI collected online surveys from random people who work in the tech industry.  
