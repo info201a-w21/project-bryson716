@@ -12,7 +12,7 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * [“Behavioral Health Conditions in the United States”](https://www.recoverymonth.gov/sites/default/files/toolkit/2017-data-visualizations.pdf) is an infographic that educates its audience on the number of Americans that deal with mental health issues relative to the number that get the treatment they need. Likewise, the infographic points out that many depression and substance abuse cases remain untreated in the US.
   * [“GBD Compare”](https://vizhub.healthdata.org/gbd-compare/) is an interactive data project that allows the user to compare different disability and mortality rates from diseases, injuries, and risk factors in the world. The data can be filtered by cause, deaths, years lived with disability, age, sex, and more.
 * What data-driven questions do you hope to answer about this domain (share at least 3)?
-  * How does mental health effect different demographics of people?
+  * How does mental health affect different demographics of people?
   * Are there any disparities between different groups of people and mental health outcomes (specifically gender and race)?
   * Are there disparities in the type of treatment different groups of people receive?
   * What are the most prevalent mental illnesses in society?
@@ -31,15 +31,15 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * Open Sourcing Mental Illness (OSMI) is a non-profit organization that helps raise awareness about mental health in the tech industry. The data helps offer the perspectives of the mental health issues that many tech people face.
   * There were 180-1433 observations from OSMI Mental Health in Tech Surveys 2016-2020.
   * There were 82-123 features in the data.
-  * This dataset can help us find the answers on how many people who work in the tech industry are affected by mental illnesses, whether there are disparities in race, and what types of mental illnesses these tech people face. 
+  * This dataset can help us find the answers on how many people who work in the tech industry are affected by mental illnesses, whether there are disparities in race, and what types of mental illnesses these tech people face.
 
-* Adrian (title)
-  * Where did you download the data (e.g., a web URL)?
-  * How was the data collected or generated?
-  * Make sure to explain who collected the data (not necessarily the same people that host the data), and who or what the data is about?
-  * How many observations (rows) are in your data?
-  * How many features (columns) are in the data?
-  * What questions (from above) can be answered using the data in this dataset?
+* **Unemployment and mental illness survey**
+  * The data was downloaded from Kaggle.com at [this URL](https://www.kaggle.com/michaelacorley/unemployment-and-mental-illness-survey)
+  * The data was collected through a paid research study on Survey Monkey, with a general population sampling. The general population sampling is thought to be accurate because the number of people who identified as having mental illness was consistent with larger samples.
+  * The data was collected by Michael Corley in an attempt to explore the linkage between mental illness and unemployment. The data contains demographic and socioeconomic data paired with the mental health status of several hundred respondents. This data will be able to show the prevalence and severity of mental health issues due to many of these demographic and socioeconomic factors.
+  * There are __334__ observations (rows) in this dataset.
+  * There are __31__ features (columns) in this dataset.
+  * The data within "Unemployment and mental illness survey" will help answer questions about how mental health affects different demographics and if there's any patterns in severity. This data can also help answer the question of which mental illnesses are most prevalent among a population.
 * **GBD Results Tool**
   * The data CSV was downloaded using a [web URL](https://s3.healthdata.org/gbd-api-2019-public/c96f6bc830512de44d86f3d5d38ff0f9_files/IHME-GBD_2019_DATA-c96f6bc8-3.zip).
   * The data was collected through a variety of methods, including censuses, vital registrations, surveys, and registries. GBD prides itself on the diversity of its data, also citing sources like verbal interviews.
