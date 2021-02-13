@@ -34,7 +34,7 @@ data$ETHNIC <- data$ETHNIC %>%
 
 value <- abs(rnorm(2060466))
 bar_graph <- ggplot(data = data) +
-  geom_col(mapping = aes(x = RACE, y = value, fill = mental_illness), position = "fill")
+  geom_col(mapping = aes(x = RACE, y = value, fill = mental_illness), position = "dodge")
 print(bar_graph)
 
 ?midwest
