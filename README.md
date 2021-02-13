@@ -54,7 +54,7 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 * An index.Rmd file that renders your report - **Morgan**
 * A file that calculates summary information to be included in your * report - **Adrian**
 * A file that creates a table of summary information to be included in your report - **Adrian**  
-* A file that creates your first chart - **Adrian**
+* A file that creates your first chart - **Caroline**
 * A file that creates your second chart - **Nina**
 * A file that creates your third chart - **Morgan**
 
