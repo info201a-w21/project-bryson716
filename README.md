@@ -31,7 +31,7 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * Open Sourcing Mental Illness (OSMI) is a non-profit organization that helps raise awareness about mental health in the tech industry. The data helps offer the perspectives of the mental health issues that many tech people face.
   * There were 180-1433 observations from OSMI Mental Health in Tech Surveys 2016-2020.
   * There were 82-123 features in the data.
-  * This dataset can help us find the answers on how many people who work in the tech industry are affected by mental illnesses, whether there are disparities in race, and what types of mental illnesses these tech people face. 
+  * This dataset can help us find the answers on how many people who work in the tech industry are affected by mental illnesses, whether there are disparities in race, and what types of mental illnesses these tech people face.
 
 * Adrian (title)
   * Where did you download the data (e.g., a web URL)?
@@ -47,3 +47,15 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * There are 500,000 observations.
   * There are 10 features.
   * This data can be used to answer the two questions regarding the demographics of those that suffer from mental illnesses, as well as the one asking which mental illness is the most prevalent globally.
+
+### Team Member Responsibilities
+Unlike other assignments, you'll keep your code organized in multiple different files. This helps keep your project more modular and clear. You'll create six different files for this project:
+
+* An index.Rmd file that renders your report - **Morgan**
+* A file that calculates summary information to be included in your * report - **Adrian**
+* A file that creates a table of summary information to be included in your report - **Adrian**  
+* A file that creates your first chart - **Adrian**
+* A file that creates your second chart - **Nina**
+* A file that creates your third chart - **Morgan**
+
+You should save your .R files in the same folder as yourindex.Rmd file. There's more information below about how these files interact.
