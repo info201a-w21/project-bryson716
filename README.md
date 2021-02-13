@@ -48,6 +48,8 @@ Use this `REAMDE.md` file to describe your final project (as detailed on Canvas)
   * There are 10 features.
   * This data can be used to answer the two questions regarding the demographics of those that suffer from mental illnesses, as well as the one asking which mental illness is the most prevalent globally.
 
+## Exploratory Analysis
+
 ### Team Member Responsibilities
 Unlike other assignments, you'll keep your code organized in multiple different files. This helps keep your project more modular and clear. You'll create six different files for this project:
 
@@ -57,5 +59,20 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 * A file that creates your first chart - **Caroline**
 * A file that creates your second chart - **Nina**
 * A file that creates your third chart - **Morgan**
+
+**Summary Information (Adrian)**
+* Proportion of ages in MHCLD dataset
+* Proportion of races/ethnicities in MHCLD dataset
+* Proportion of sex in MHCLD dataset
+
+**Visual 1 (Caroline)**
+> Creating map of mental health facilities in the U.S.
+
+**Visual 2 (Nina)**
+> Creating visual (TBD) of mental illness in tech and/or mental illness among unemployed.
+
+**Visual 3 (Morgan)**
+> Creating bar graph of common mental illnesses among different races/ethnicities.
+
 
 You should save your .R files in the same folder as yourindex.Rmd file. There's more information below about how these files interact.
