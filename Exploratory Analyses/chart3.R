@@ -33,6 +33,7 @@ data$ETHNIC <- data$ETHNIC %>%
   str_replace_all("4", "not hispanic/latino")
 
 value <- abs(rnorm(2060466))
+data <- mutate(data, "percentage" = )
 bar_graph <- ggplot(data = data) +
   geom_col(mapping = aes(x = RACE, y = value, fill = mental_illness), position = "dodge")
 print(bar_graph)
