@@ -69,7 +69,7 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 > Creating map of mental health facilities in the U.S.
 
 **Visual 2 (Nina)**
-> Creating a stacked bar chart of the mental illness among the unemployed and education
+> Creating a stacked bar chart of the mental illness among gender and unemployment 
 
 **Visual 3 (Morgan)**
 > Creating bar graph of common mental illnesses among different races/ethnicities.
