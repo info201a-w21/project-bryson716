@@ -2,7 +2,6 @@
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
-library(tibble)
 library(colorspace)
 library(colorblindr)
 
