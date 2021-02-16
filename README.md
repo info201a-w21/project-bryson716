@@ -69,7 +69,7 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 > Creating map of mental health facilities in the U.S.
 
 **Visual 2 (Nina)**
-> Creating visual (TBD) of mental illness in tech and/or mental illness among unemployed.
+> Creating a stacked bar chart of the mental illness among the unemployed and education
 
 **Visual 3 (Morgan)**
 > Creating bar graph of common mental illnesses among different races/ethnicities.
