@@ -38,7 +38,7 @@ blank_theme <- theme_bw() +
     panel.border = element_blank()      # remove border around plot
   )
 
-stacked_barchart <- ggplot(df, aes(fill = Education, y = Have_MentalIllness, x = Curr_Employed)) + 
+stacked_barchart <- ggplot(df, aes(fill = Gender, y = Have_MentalIllness, x = Curr_Employed)) + 
   geom_bar(position = "stack", stat="identity") +
   scale_fill_OkabeIto()  +
   theme(axis.text.x = element_text(hjust = 1)) + 
@@ -47,7 +47,7 @@ stacked_barchart <- ggplot(df, aes(fill = Education, y = Have_MentalIllness, x =
   blank_theme + 
   labs(x = "Employment", 
        y = "Identify as Having a Mental Illness", 
-       title = "The Interesections of Unemployment, Education, and Mental Health") +
+       title = "The Interesections of Unemployment, Gender, and Mental Health") +
   theme(plot.title = element_text(hjust = 0.5))  
 
 print(stacked_barchart)
