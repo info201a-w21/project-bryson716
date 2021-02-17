@@ -33,6 +33,7 @@ blank_theme <- theme_bw() +
     axis.line = element_blank(),
     axis.text = element_blank(),
     axis.ticks = element_blank(),
+    axis.title = element_blank(),
     plot.background = element_blank(),
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
@@ -48,7 +49,5 @@ mh_intake_map <- ggplot(state_mh_intake) +
   scale_fill_continuous(limits = c(0, max(state_mh_intake$MHINTAKE)), 
                         na.value = "white", low = "red", high = "blue") +
   labs(title = "Number of Mental Health Facilities in Each State, 2018") +
-  xlab("Longitude") +
-  ylab("Latitude") +
   labs(fill = "Number of Facilities") +
   blank_theme
