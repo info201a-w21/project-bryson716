@@ -1,7 +1,13 @@
 library(tidyverse)
 library(stringr)
+library(ggrepel)
 data <- read.csv("Small_MHCLD.csv")
 data <- select(data, ETHNIC, RACE, MH1)
+
+# create color scheme
+color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen", 
+                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
+                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
 
 # edit text
 data$RACE <- data$RACE %>%
@@ -43,9 +49,10 @@ race_illness_prop <- left_join(mental_illness, race_totals, by = "RACE") %>%
 bar_graph <- ggplot(data = race_illness_prop) +
   geom_col(mapping = aes(x = RACE, y = prop, fill = MH1),
            position = "fill") +
-  labs(title = "Proportion of Mental Illness Type in Each Race",
+  scale_fill_manual(values = color_scheme) +
+  labs(title = "Racial Proportions of Mental Illness Diagnoses, 2018",
        x = "Race",
        y = "Total",
-       color = "Mental Illness")
+       fill = "Mental Illness")
 print(bar_graph)
 

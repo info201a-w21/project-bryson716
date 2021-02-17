@@ -4,9 +4,9 @@ library("ggplot2")
 library("maps")
 library("mapproj")
 # create color scheme
-color_scheme <- colors()[c("navy","royalblue4", "steelblue4", "slateblue4", "slateblue1",
-                           "mediumpurple", "mediumseagreen", "mediumaquamarine", "turquoise",
-                           "paleturquoise2", "palegreen", "darkseagreen1", "powderblue")]
+color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen", 
+                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
+                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
 
 #load data
 mental_health_facilities <- read.csv("nmhss-puf-2018-csv.csv")
