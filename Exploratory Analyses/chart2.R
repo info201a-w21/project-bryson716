@@ -4,6 +4,11 @@ library(ggplot2)
 library(dplyr)
 library(RColorBrewer) 
 
+# create color scheme
+color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen", 
+                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
+                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
+
 # Load the Unemployment and Mental Illness Survey data into a variable  
 df <- read.csv("data/unemploymentdata.csv", stringsAsFactors = FALSE)
 
