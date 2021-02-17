@@ -3,6 +3,11 @@ library("dplyr")
 library("ggplot2") 
 library("maps")
 library("mapproj")
+# create color scheme
+color_scheme <- colors()[c("navy","royalblue4", "steelblue4", "slateblue4", "slateblue1",
+                           "mediumpurple", "mediumseagreen", "mediumaquamarine", "turquoise",
+                           "paleturquoise2", "palegreen", "darkseagreen1", "powderblue")]
+
 #load data
 mental_health_facilities <- read.csv("nmhss-puf-2018-csv.csv")
 
@@ -47,7 +52,7 @@ mh_intake_map <- ggplot(state_mh_intake) +
   ) +
   coord_map() +
   scale_fill_continuous(limits = c(0, max(state_mh_intake$MHINTAKE)), 
-                        na.value = "white", low = "red", high = "blue") +
+                        na.value = "white", low = "slateblue4", high = "turquoise") +
   labs(title = "Number of Mental Health Facilities in Each State, 2018") +
   labs(fill = "Number of Facilities") +
   blank_theme
