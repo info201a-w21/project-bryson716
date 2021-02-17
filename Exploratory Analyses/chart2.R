@@ -2,11 +2,10 @@
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
-library(colorspace)
-library(colorblindr)
+library(RColorBrewer) 
 
 # Load the Unemployment and Mental Illness Survey data into a variable  
-df <- read.csv("unemploymentdata.csv", stringsAsFactors = FALSE)
+df <- read.csv("data/unemploymentdata.csv", stringsAsFactors = FALSE)
 
 # Rename specific column names ("I.am.currently.employed.at.least.part.time"
 # and ("I.identify.as.having.a.mental.illness") to Employed and Have_MentalIllness
@@ -40,7 +39,7 @@ blank_theme <- theme_bw() +
 
 stacked_barchart <- ggplot(df, aes(fill = Gender, y = Have_MentalIllness, x = Curr_Employed)) + 
   geom_bar(position = "stack", stat="identity") +
-  scale_fill_OkabeIto()  +
+  scale_fill_brewer(palette = "PuRd")  +
   scale_x_continuous(breaks = seq(0, 1.0, by=1), 
                      labels = c("Unemployed", "Employed")) +
   blank_theme + 
