@@ -44,7 +44,7 @@ blank_theme <- theme_bw() +
 
 stacked_barchart <- ggplot(df, aes(fill = Gender, y = Have_MentalIllness, x = Curr_Employed)) + 
   geom_bar(position = "stack", stat="identity") +
-  scale_fill_brewer(palette = "PuRd")  +
+  scale_fill_manual(values = c("mediumpurple", "turquoise"))  +
   scale_x_continuous(breaks = seq(0, 1.0, by=1), 
                      labels = c("Unemployed", "Employed")) +
   blank_theme + 
