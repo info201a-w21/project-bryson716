@@ -38,7 +38,7 @@ print(bar_graph)
 Talk talk talk
 
 ```{r, echo=FALSE}
-print(stacked_barchart)
+print(treemap_chart)
 ```
 
 ## Distribution of Mental Health Facilities
