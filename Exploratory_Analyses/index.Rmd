@@ -18,7 +18,7 @@ source("chart3.R")
 
 Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. _But how does mental illness effect specific demographics?_ Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics (namely race). This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.
 
-We will be using data sets from multiple sources to illustrate our points. The primary data set being used is from the **Substance Abuse and Mental Health Services Administration (SAMHA)**. This data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used the alskjfljdf
+We will be using data sets from multiple sources to illustrate our points. The primary data set being used is from the **Substance Abuse and Mental Health Services Administration (SAMHA)** and **Unemployment and Mental Illness Survey**. This data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used the alskjfljdf
 
 ## Summary
 
@@ -33,9 +33,9 @@ We looked at the proportion of clients with different mental illnesses grouped b
 print(bar_graph)
 ```
 
-## ljsf
+## Intersections of Unemployment, Gender, and Mental Health
 
-Talk talk talk
+The tree map below looks into the intersections of job employment status, gender, and mental health and whether or not gender or unemployment has a significant impact on mental health. The data shown in this entry demonstrates that the number of employed women with mental illnesses are slightly higher than the number of employed men with mental illnesses. This is also the case for unemployed individuals, which implies that mental health is not significantly affected by either employment status or gender. This does not necessarily mean that gender and job employment have no affect on mental health.
 
 ```{r, echo=FALSE}
 print(treemap_chart)
