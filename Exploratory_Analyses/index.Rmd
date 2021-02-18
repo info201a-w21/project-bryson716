@@ -1,0 +1,38 @@
+---
+title: "A Map of Mental Illness in America"
+author: "Morgan Bryson, Adrian Fernandez, Caroline Low, and Nina Tran"
+date: "2/17/2021"
+output: html_document
+---
+```{r, include = FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(tidyverse)
+library(lintr)
+source("Exploratory_analysis_map.R")
+source("chart2.R")
+source("chart3.R")
+```
+
+
+# Introduction
+
+Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. _But how does mental illness effect specific demographics?_ Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics (namely race). This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.
+
+We will be using data sets from multiple sources to illustrate our points. The primary data set being used is from the **Substance Abuse and Mental Health Services Administration (SAMHA)**. This data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used the alskjfljdf
+
+# Summary
+
+# Distribution of Mental Health Facilities
+
+The map below illustrates the number of mental health facilities in each state (excluding Alaska and Hawaii). We wanted to investigate how mental health facilities were distributed in America because this is an indicator of how accessible mental health services are in the country. As shown on the map, only a few states exceeded 600 facilities in 2018. Most of the Midwestern region has limited access to mental health services compared to the rest of America. One conclusion we can draw from this is that people located in these regions will have a harder time getting help for mental illness. There could be regional differences as well in how mental illness is stigmatized, resulting in higher or lower numbers of mental health facilites.
+
+```{r, echo = F}
+print(mh_intake_map)
+```
+
+
+
+
+
