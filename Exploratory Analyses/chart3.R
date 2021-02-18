@@ -1,7 +1,7 @@
 library(tidyverse)
 library(stringr)
 library(ggrepel)
-data <- read.csv("Small_MHCLD.csv")
+data <- read.csv("data/Small_MHCLD.csv")
 data <- select(data, ETHNIC, RACE, MH1)
 
 # create color scheme

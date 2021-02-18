@@ -9,7 +9,7 @@ color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen",
                    "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
 
 #load data
-mental_health_facilities <- read.csv("nmhss-puf-2018-csv.csv")
+mental_health_facilities <- read.csv("data/nmhss-puf-2018-csv.csv")
 
 #load state map data
 state_shapes <- map_data("state") %>%
