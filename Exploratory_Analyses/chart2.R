@@ -76,16 +76,16 @@ treemap_chart <- ggplot(tree_data, aes(area = n, subgroup = Curr_Employed,
   geom_treemap_subgroup2_border(layout = "srow", color = "white", size = 7) +
   geom_treemap_subgroup_border(layout = "srow", color = "black", size = 7) +
   geom_treemap_subgroup_text(layout = "srow", place = "center", grow = FALSE,
-                             size = 26) +
+                             size = 20) +
   geom_treemap_subgroup2_text(layout = "srow", place = "topleft", grow = FALSE,
                               padding.x = grid::unit(6, "points"),
-                              padding.y = grid::unit(10, "points"), size = 16) +
+                              padding.y = grid::unit(10, "points"), size = 14) +
   geom_treemap_subgroup3_text(layout = "srow", place = "bottom", grow = FALSE,
-                              padding.y = grid::unit(6, "points"), size = 12,
+                              padding.y = grid::unit(6, "points"), size = 10,
                               reflow = TRUE) +
   theme(legend.position = "none") +
-  ggtitle("The Interesections of Unemployment, \nGender, and Mental Health") +
-  theme(plot.title = element_text(hjust = 0.5, size = 26))
+  ggtitle("The Intersections of Unemployment, \nGender, and Mental Health") +
+  theme(plot.title = element_text(hjust = 0.5, size = 18))
 
 print(treemap_chart)
 
