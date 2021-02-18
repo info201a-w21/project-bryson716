@@ -2,12 +2,13 @@
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
-library(RColorBrewer) 
+library(RColorBrewer)
+library(treemapify)
 
 # create color scheme
-color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen", 
-                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
-                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
+color_scheme <- c( "slateblue1", "paleturquoise2", "darkseagreen1", "palegreen", 
+                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple")
+#                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
 
 # Load the Unemployment and Mental Illness Survey data into a variable  
 df <- read.csv("data/unemploymentdata.csv", stringsAsFactors = FALSE)
@@ -42,6 +43,7 @@ blank_theme <- theme_bw() +
     panel.border = element_blank()      # remove border around plot
   )
 
+# Stacked bar chart
 stacked_barchart <- ggplot(df, aes(fill = Gender, y = Have_MentalIllness, x = Curr_Employed)) + 
   geom_bar(position = "stack", stat="identity") +
   scale_fill_manual(values = c("mediumpurple", "turquoise"))  +
@@ -54,4 +56,36 @@ stacked_barchart <- ggplot(df, aes(fill = Gender, y = Have_MentalIllness, x = Cu
   theme(plot.title = element_text(hjust = 0.5))  
 
 print(stacked_barchart)
+
+# Treemap
+tree_data <- df %>%
+  select(Curr_Employed, Have_MentalIllness, Gender) %>%
+  mutate(Curr_Employed = recode(Curr_Employed,
+                                `0`="Unemployed",
+                                `1`="Currently Employed")) %>%
+  mutate(Have_MentalIllness = recode(Have_MentalIllness,
+                                     `0`="Does not have mental illness",
+                                     `1`="Have mental illness")) %>%
+  group_by(Curr_Employed, Gender, Have_MentalIllness) %>%
+  tally()
+
+treemap_chart <- ggplot(tree_data, aes(area = n, subgroup = Curr_Employed,
+                      subgroup2 = Gender, subgroup3 = Have_MentalIllness)) +
+  geom_treemap(layout = "srow", fill = color_scheme) +
+  geom_treemap_subgroup3_border(layout = "srow", color = "white", size = 1) +
+  geom_treemap_subgroup2_border(layout = "srow", color = "white", size = 7) +
+  geom_treemap_subgroup_border(layout = "srow", color = "black", size = 7) +
+  geom_treemap_subgroup_text(layout = "srow", place = "center", grow = FALSE,
+                             size = 26) +
+  geom_treemap_subgroup2_text(layout = "srow", place = "topleft", grow = FALSE,
+                              padding.x = grid::unit(6, "points"),
+                              padding.y = grid::unit(10, "points"), size = 16) +
+  geom_treemap_subgroup3_text(layout = "srow", place = "bottom", grow = FALSE,
+                              padding.y = grid::unit(6, "points"), size = 12,
+                              reflow = TRUE) +
+  theme(legend.position = "none") +
+  ggtitle("The Interesections of Unemployment, \nGender, and Mental Health") +
+  theme(plot.title = element_text(hjust = 0.5, size = 26))
+
+print(treemap_chart)
 
