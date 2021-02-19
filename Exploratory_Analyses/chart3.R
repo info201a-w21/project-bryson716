@@ -1,5 +1,6 @@
 library(tidyverse)
 library(stringr)
+library(ggplot2)
 library(ggrepel)
 data <- read.csv("data/Small_MHCLD.csv")
 data <- select(data, ETHNIC, RACE, MH1)
@@ -53,6 +54,7 @@ bar_graph <- ggplot(data = race_illness_prop) +
   labs(title = "Racial Proportions of Mental Illness Diagnoses, 2018",
        x = "Race",
        y = "Total",
-       fill = "Mental Illness")
+       fill = "Mental Illness") +
+  coord_flip()
 print(bar_graph)
 

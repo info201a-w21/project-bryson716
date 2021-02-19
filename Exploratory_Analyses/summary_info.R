@@ -2,14 +2,14 @@
 library(dplyr)
 library(tidyverse)
 
-data <- read.csv("small_MHCLD.csv")
+data <- read.csv("data/small_MHCLD.csv")
 
 #Proportion of ages in MHCLD dataset
 Ages <- data %>% 
   group_by(AGE) %>%
   summarise_all(sum) 
 
-Ages <- subset(Ages, select = -c(EDUC:IJSSERVICE, STATEFIP:REGION))
+Ages <- subset(Ages, select = -c(EDUC:NUMMHS, STATEFIP:REGION))
 
 # Renaming rows
 
@@ -52,7 +52,7 @@ Races <- data %>%
   group_by(RACE) %>%
   summarise_all(sum) 
 
-Races <- subset(Races, select = -c(AGE:ETHNIC, STATEFIP:REGION, GENDER:IJSSERVICE, STATEFIP:REGION))
+Races <- subset(Races, select = -c(AGE:ETHNIC, GENDER:NUMMHS, STATEFIP:REGION))
 
 # Renaming rows
 
@@ -86,7 +86,7 @@ Genders_sex <- data %>%
   summarise_all(sum) %>% 
   slice(2:3)
 
-Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE, STATEFIP:REGION, IJSSERVICE, STATEFIP:REGION))
+Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE, STATEFIP:REGION))
 
 # Renaming rows
 
