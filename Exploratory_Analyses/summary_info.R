@@ -122,7 +122,7 @@ data$MH1 <- data$MH1 %>%
   str_replace_all("4", "Conduct Disorder") %>%
   str_replace_all("5", "Delirium/Dementia") %>%
   str_replace_all("6", "Bipolar") %>%
-  str_replace_all("7", "Depression") %>%
+  str_replace_all("7", "Depressive Disorders") %>%
   str_replace_all("8", "ODD") %>%
   str_replace_all("9", "PDD")
 
@@ -135,7 +135,6 @@ most_common <- data %>%
   filter(freq == max(freq)) %>%
   pull(MH1)
 
-most_common <- "Depressive Disorders"
 
 # Least common mental illness
 
@@ -146,8 +145,6 @@ least_common <- data %>%
   summarise("freq" = length(MH1)) %>%
   filter(freq == min(freq)) %>%
   pull(MH1)
-
-least_common <- "Delirium, Dementia"
 
 # More males or females?
 males_or_females <- data %>%
@@ -169,13 +166,13 @@ most_common_age <- data %>%
   filter(freq == max(freq)) %>%
   pull(AGE)
 
-most_popular_age_range <- "0-11 years old"
+most_common_age <- "0-11 years old"
 
 # Most prevalent mental illness among minority groups
 
-Only_minorites <- data %>% 
+only_minorities <- data %>% 
   group_by(RACE) %>%
-  select(MH1) %>%
+  select(MH1, RACE) %>%
   filter(MH1 != "NA") %>% 
   group_by(MH1) %>%
   summarise("freq" = length(MH1)) %>%
@@ -183,4 +180,3 @@ Only_minorites <- data %>%
   filter(freq == max(freq)) %>%
   pull(MH1)
 
-Only_minorites <- "Depressive Disorders"
