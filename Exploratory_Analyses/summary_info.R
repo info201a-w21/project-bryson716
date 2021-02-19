@@ -9,7 +9,8 @@ Ages <- data %>%
   group_by(AGE) %>%
   summarise_all(sum) 
 
-Ages <- subset(Ages, select = -c(EDUC:NUMMHS, STATEFIP:REGION))
+
+Ages <- subset(Ages, select = -c(EDUC:MH1 , STATEFIP:REGION))
 
 # Renaming rows
 
@@ -52,7 +53,7 @@ Races <- data %>%
   group_by(RACE) %>%
   summarise_all(sum) 
 
-Races <- subset(Races, select = -c(AGE:ETHNIC, GENDER:NUMMHS, STATEFIP:REGION))
+Races <- subset(Races, select = -c(AGE:ETHNIC, GENDER:MH1, STATEFIP:REGION))
 
 # Renaming rows
 
@@ -86,7 +87,7 @@ Genders_sex <- data %>%
   summarise_all(sum) %>% 
   slice(2:3)
 
-Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE, STATEFIP:REGION))
+Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE,MH1, STATEFIP:REGION))
 
 # Renaming rows
 
@@ -108,3 +109,27 @@ Genders_sex <- Genders_sex %>%
     Schizophrenia_disorder = SCHIZOFLG,
     Alcohol_or_substance_related_disorder = ALCSUBFLG
   )
+
+# Most common Mental illness
+most_common <- tail(names(sort(table(data$MH1))), 1)
+most_common <- "Depressive disorders"
+
+# Least common mental illness
+
+least_common <- min(table(data$MH1, useNA="ifany"))
+least_common <- "Delirium, Dementia"
+
+# More males or females?
+more_males_females <- tail(names(sort(table(data$GENDER))), 1)
+more_males_females <- "Females"
+
+# Most common age range?
+
+most_popular_age_range <- tail(names(sort(table(data$AGE))), 1)
+most_popular_age_range <- "0-11 years old"
+
+# Most prevalent mental illness among minority groups
+
+Only_minorites <- Races %>%
+  slice(-5) %>% 
+  

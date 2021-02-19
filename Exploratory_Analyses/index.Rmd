@@ -11,6 +11,7 @@ library(knitr)
 source("Exploratory_analysis_map.R")
 source("chart2.R")
 source("chart3.R")
+source("summary_info.R")
 ```
 
 
@@ -22,7 +23,10 @@ We will be using data sets from multiple sources to illustrate our points. The p
 
 ## Summary
 
-
+```
+library(knitr)
+kable(Ages)
+```
 # Analyses
 
 ## Mental Illness Proportions
