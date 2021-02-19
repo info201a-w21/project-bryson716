@@ -135,6 +135,8 @@ most_common <- data %>%
   filter(freq == max(freq)) %>%
   pull(MH1)
 
+most_common <- "Depressive Disorders"
+
 # Least common mental illness
 
 least_common <- data %>%
@@ -172,4 +174,13 @@ most_popular_age_range <- "0-11 years old"
 # Most prevalent mental illness among minority groups
 
 Only_minorites <- data %>% 
-  
+  group_by(RACE) %>%
+  select(MH1) %>%
+  filter(MH1 != "NA") %>% 
+  group_by(MH1) %>%
+  summarise("freq" = length(MH1)) %>%
+  slice(-5) %>%
+  filter(freq == max(freq)) %>%
+  pull(MH1)
+
+Only_minorites <- "Depressive Disorders"
