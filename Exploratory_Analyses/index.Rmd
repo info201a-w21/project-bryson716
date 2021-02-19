@@ -1,6 +1,6 @@
 ---
 title: "A Map of Mental Illness in America"
-author: "Morgan Bryson, Adrian Fernandez, Caroline Low, and Nina Tran"
+author: "Nina Tran, Adrian Fernandez, Caroline Low, and Morgan Bryson"
 date: "2/17/2021"
 output: html_document
 ---
@@ -17,18 +17,24 @@ source("summary_info.R")
 
 # Introduction
 
-Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. _But how does mental illness effect specific demographics?_ Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics (namely race). This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.
+Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. _But how does mental illness effect specific demographics?_ Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics. This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.
 
-We will be using data sets from multiple sources to illustrate our points. The primary data set being used is from the **Substance Abuse and Mental Health Services Administration (SAMHA)** and **Unemployment and Mental Illness Survey**. This data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used the alskjfljdf
+We will be using data sets from multiple sources to illustrate our points. The primary data sets being used for our analyses are from the **Substance Abuse and Mental Health Services Administration (SAMHA)** and the **Unemployment and Mental Illness Survey**. The SAMHA data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used a data set on [Kaggle](https://www.kaggle.com/michaelacorley/unemployment-and-mental-illness-survey), that focused on mental illness prevalence and unemployment. This data was collected by Michael Corley in a paid research study.
 
 ## Summary
 
 The most common mental illness in our SAMHA data set was `r most_common`, while the least common was r min. This is across all demographics in the data set. Among minority populations, the most common mental illness was r minority. [insert sentence about that and the implications]. r gender [make sure to paste s] were more common to receive state-funded treatment for a mental illness out of this data set. This could point to some disparities between mental illness prevalence and mental illness treatment among genders. Finally, the most common age to be treated for a mental illness was dfslkj. Below are some tables that summarize the prevalence of different mental illnesses based on race, gender, and age.
 
 ```{r, echo = F}
-kable(t(Races))
-kable(t(Genders_sex))
-kable(t(Ages))
+kable(t(Races),
+        caption = "Total Number of People Endorsing a Mental Illness by Race",
+      col.names = c("American Indian/Alaskan Native", "Asian", "Black", "Native Hawaiian/Pacific Islander", "White", "Other/Multiracial"))
+kable(t(Genders_sex),
+        caption = "Total Number of People Endorsing a Mental Illness by Gender",
+      col.names = c("Male", "Female"))
+kable(t(Ages),
+        caption = "Total Number of People Endorsing a Mental Illness by Age Range",
+      col.names = c("0-11 Years Old", "12-14 Years Old", "15-17 Years Old", "18-20 Years Old", "21-24 Years Old", "25-29 Years Old", "30-34 Years Old", "35-39 Years Old", "40-44 Years Old", "45-49 Years Old", "50-54 Years Old", "55-59 Years Old", "60-64 Years Old", "65 Years and Older"))
 ```
 
 # Analyses

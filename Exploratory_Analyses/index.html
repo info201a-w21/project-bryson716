@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Morgan Bryson, Adrian Fernandez, Caroline Low, and Nina Tran" />
+<meta name="author" content="Nina Tran, Adrian Fernandez, Caroline Low, and Morgan Bryson" />
 
 
 <title>A Map of Mental Illness in America</title>
@@ -373,7 +373,7 @@ summary {
 
 
 <h1 class="title toc-ignore">A Map of Mental Illness in America</h1>
-<h4 class="author">Morgan Bryson, Adrian Fernandez, Caroline Low, and Nina Tran</h4>
+<h4 class="author">Nina Tran, Adrian Fernandez, Caroline Low, and Morgan Bryson</h4>
 <h4 class="date">2/17/2021</h4>
 
 </div>
@@ -381,15 +381,13 @@ summary {
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. <em>But how does mental illness effect specific demographics?</em> Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics (namely race). This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.</p>
-<p>We will be using data sets from multiple sources to illustrate our points. The primary data set being used is from the <strong>Substance Abuse and Mental Health Services Administration (SAMHA)</strong> and <strong>Unemployment and Mental Illness Survey</strong>. This data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used the alskjfljdf</p>
+<p>Mental illness is pervasive across America in all demographic groups. It is an issue that effects millions of people every year, having a lasting impact on overall health and well-being. <em>But how does mental illness effect specific demographics?</em> Our team sought to investigate how mental illness is distributed in America based on different demographic characteristics. This research is crucial in identifying disproportional mental health services and treatment. Revealing inequalities in mental illness prevalence can also point to larger, systemic issues within our country that we must solve to better support our citizens.</p>
+<p>We will be using data sets from multiple sources to illustrate our points. The primary data sets being used for our analyses are from the <strong>Substance Abuse and Mental Health Services Administration (SAMHA)</strong> and the <strong>Unemployment and Mental Illness Survey</strong>. The SAMHA data set is a collection of clients who received services from state mental health agencies in 2018. We will also be using the SAMHA National Mental Health Services Survey from 2018. This data set breaks down mental health services and facilities in each state. Finally, we used a data set on <a href="https://www.kaggle.com/michaelacorley/unemployment-and-mental-illness-survey">Kaggle</a>, that focused on mental illness prevalence and unemployment. This data was collected by Michael Corley in a paid research study.</p>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>The most common mental illness in our SAMHDA data set was r max, while the least common was r min. This is across all demographics in the data set. Among minority populations, the most common mental illness was r minority. [insert sentence about that and the implications]. r gender [make sure to paste s] were more common to receive state-funded treatment for a mental illness out of this data set. This could point to some disparities between mental illness prevalence and mental illness treatment among genders. Finally, the most common age to be treated for a mental illness was dfslkj. Below are some tables that summarize the prevalence of different mental illnesses based on race, gender, and age.</p>
-<pre><code>## Warning in kable_pipe(x = structure(c(&quot;RACE&quot;,
-## &quot;Number_of_Mental_Health_Diagnoses_Reported&quot;, : The table should have a header
-## (column names)</code></pre>
+<p>The most common mental illness in our SAMHA data set was Depression, while the least common was r min. This is across all demographics in the data set. Among minority populations, the most common mental illness was r minority. [insert sentence about that and the implications]. r gender [make sure to paste s] were more common to receive state-funded treatment for a mental illness out of this data set. This could point to some disparities between mental illness prevalence and mental illness treatment among genders. Finally, the most common age to be treated for a mental illness was dfslkj. Below are some tables that summarize the prevalence of different mental illnesses based on race, gender, and age.</p>
 <table>
+<caption>Total Number of People Endorsing a Mental Illness by Race</caption>
 <colgroup>
 <col width="22%"></col>
 <col width="15%"></col>
@@ -399,6 +397,17 @@ summary {
 <col width="4%"></col>
 <col width="20%"></col>
 </colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">American Indian/Alaskan Native</th>
+<th align="left">Asian</th>
+<th align="left">Black</th>
+<th align="left">Native Hawaiian/Pacific Islander</th>
+<th align="left">White</th>
+<th align="left">Other/Multiracial</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">RACE</td>
@@ -514,6 +523,7 @@ summary {
 ## &quot;Number_of_Mental_Health_Diagnoses_Reported&quot;, : The table should have a header
 ## (column names)</code></pre>
 <table>
+<caption>Total Number of People Endorsing a Mental Illness by Gender</caption>
 <tbody>
 <tr class="odd">
 <td align="left">GENDER</td>
@@ -577,10 +587,8 @@ summary {
 </tr>
 </tbody>
 </table>
-<pre><code>## Warning in kable_pipe(x = structure(c(&quot;AGE&quot;,
-## &quot;Number_of_Mental_Health_Diagnoses_Reported&quot;, : The table should have a header
-## (column names)</code></pre>
 <table style="width:100%;">
+<caption>Total Number of People Endorsing a Mental Illness by Age Range</caption>
 <colgroup>
 <col width="16%"></col>
 <col width="5%"></col>
@@ -598,6 +606,25 @@ summary {
 <col width="5%"></col>
 <col width="7%"></col>
 </colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">0-11 Years Old</th>
+<th align="left">12-14 Years Old</th>
+<th align="left">15-17 Years Old</th>
+<th align="left">18-20 Years Old</th>
+<th align="left">21-24 Years Old</th>
+<th align="left">25-29 Years Old</th>
+<th align="left">30-34 Years Old</th>
+<th align="left">35-39 Years Old</th>
+<th align="left">40-44 Years Old</th>
+<th align="left">45-49 Years Old</th>
+<th align="left">50-54 Years Old</th>
+<th align="left">55-59 Years Old</th>
+<th align="left">60-64 Years Old</th>
+<th align="left">65 Years and Older</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td align="left">AGE</td>
