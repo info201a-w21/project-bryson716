@@ -15,7 +15,7 @@ Ages <- subset(Ages, select = -c(EDUC:MH1 , STATEFIP:REGION))
 # Renaming rows
 
 
-Ages$AGE[Ages$AGE  == "10 -12 years old"]  <- "0-11 years old"
+Ages$AGE[Ages$AGE  == "1"]  <- "0-11 years old"
 Ages$AGE[Ages$AGE  == "2"]  <- "12-14 years old"
 Ages$AGE[Ages$AGE  == "3"]  <- "15-17 years old"
 Ages$AGE[Ages$AGE  == "4"]  <- "18-20 years old"
@@ -110,9 +110,30 @@ Genders_sex <- Genders_sex %>%
     Alcohol_or_substance_related_disorder = ALCSUBFLG
   )
 
+# Rename values in MH1 Column
+data$MH1 <- data$MH1 %>%
+  str_replace_all("10", "Personality Disorder") %>%
+  str_replace_all("11", "Schizophrenia") %>%
+  str_replace_all("12", "Substance Abuse") %>%
+  str_replace_all("13", "Other") %>%
+  str_replace_all("1", "Trauma") %>%
+  str_replace_all("2", "Anxiety Disorder") %>%
+  str_replace_all("3", "ADD/ADHD") %>%
+  str_replace_all("4", "Conduct Disorder") %>%
+  str_replace_all("5", "Delirium/Dementia") %>%
+  str_replace_all("6", "Bipolar") %>%
+  str_replace_all("7", "Depression") %>%
+  str_replace_all("8", "ODD") %>%
+  str_replace_all("9", "PDD")
+
 # Most common Mental illness
-most_common <- tail(names(sort(table(data$MH1))), 1)
-most_common <- "Depressive disorders"
+most_common <- data %>%
+  select(MH1) %>%
+  filter(MH1 != "NA") %>%
+  group_by(MH1) %>%
+  summarise("freq" = length(MH1)) %>%
+  filter(freq == max(freq)) %>%
+  pull(MH1)
 
 # Least common mental illness
 
@@ -130,6 +151,5 @@ most_popular_age_range <- "0-11 years old"
 
 # Most prevalent mental illness among minority groups
 
-Only_minorites <- Races %>%
-  slice(-5) %>% 
+Only_minorites <- Races
   

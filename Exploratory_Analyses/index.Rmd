@@ -23,10 +23,14 @@ We will be using data sets from multiple sources to illustrate our points. The p
 
 ## Summary
 
+The most common mental illness in our SAMHA data set was `r most_common`, while the least common was r min. This is across all demographics in the data set. Among minority populations, the most common mental illness was r minority. [insert sentence about that and the implications]. r gender [make sure to paste s] were more common to receive state-funded treatment for a mental illness out of this data set. This could point to some disparities between mental illness prevalence and mental illness treatment among genders. Finally, the most common age to be treated for a mental illness was dfslkj. Below are some tables that summarize the prevalence of different mental illnesses based on race, gender, and age.
+
+```{r, echo = F}
+kable(t(Races))
+kable(t(Genders_sex))
+kable(t(Ages))
 ```
-library(knitr)
-kable(Ages)
-```
+
 # Analyses
 
 ## Mental Illness Proportions
