@@ -1,6 +1,7 @@
 #Loading packages in
 library(dplyr)
 library(tidyverse)
+library(styler)
 
 data <- read.csv("data/small_MHCLD.csv")
 
@@ -80,6 +81,7 @@ Races <- Races %>%
     Schizophrenia_disorder = SCHIZOFLG,
     Alcohol_or_substance_related_disorder = ALCSUBFLG
   )
+
 ###Proportion of sex in MHCLD dataset
 
 Genders_sex <- data %>% 
@@ -180,3 +182,4 @@ only_minorities <- data %>%
   filter(freq == max(freq)) %>%
   pull(MH1)
 
+style_file("summary_info.R")

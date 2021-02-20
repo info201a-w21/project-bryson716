@@ -2,6 +2,7 @@ library(tidyverse)
 library(stringr)
 library(ggplot2)
 library(ggrepel)
+library(styler)
 data <- read.csv("data/Small_MHCLD.csv")
 data <- select(data, ETHNIC, RACE, MH1)
 
@@ -58,3 +59,4 @@ bar_graph <- ggplot(data = race_illness_prop) +
   coord_flip()
 print(bar_graph)
 
+style_file("chart3.R")
