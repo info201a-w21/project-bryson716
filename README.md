@@ -69,10 +69,37 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 > Creating map of mental health facilities in the U.S.
 
 **Visual 2 (Nina)**
-> Creating a stacked bar chart of the mental illness among gender and unemployment 
+> Creating a stacked bar chart of the mental illness among gender and unemployment
 
 **Visual 3 (Morgan)**
 > Creating bar graph of common mental illnesses among different races/ethnicities.
 
 
-You should save your .R files in the same folder as yourindex.Rmd file. There's more information below about how these files interact.
+## Final Deliverable
+
+### Teammate Responsibilities
+
+* Introductory Page
+  * Image or relevant graph/table
+  * Main research questions
+  * Data being used
+  * Maybe some summary statistics of all data sets?
+
+* Interactive Page 1
+  * Shiny application with at least one control
+  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
+
+* Interactive Page 2
+  * Shiny application with at least one control
+  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
+
+* Interactive Page 3
+  * Shiny application with at least one control
+  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
+
+* Conclusion Page
+  * At least three takeaways from Analysis
+  * Probably should include graphs/tables to further illustrate points
+  * Ties to introduction page
+
+* Putting everything together and making sure it looks good

@@ -7,9 +7,11 @@ data <- read.csv("data/Small_MHCLD.csv")
 data <- select(data, ETHNIC, RACE, MH1)
 
 # create color scheme
-color_scheme <- c( "powderblue", "paleturquoise2", "darkseagreen1", "palegreen", 
-                   "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
-                   "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy")
+color_scheme <- c(
+  "powderblue", "paleturquoise2", "darkseagreen1", "palegreen",
+  "turquoise", "mediumaquamarine", "mediumseagreen", "mediumpurple",
+  "slateblue1", "slateblue4", "steelblue4", "royalblue4", "navy"
+)
 
 # edit text
 data$RACE <- data$RACE %>%
@@ -45,17 +47,21 @@ race_totals <- data %>%
   summarise("total_race" = length(RACE))
 
 race_illness_prop <- left_join(mental_illness, race_totals, by = "RACE") %>%
-  mutate("prop" = total_w_illness/total_race)
+  mutate("prop" = total_w_illness / total_race)
 
 # create bar graph
 bar_graph <- ggplot(data = race_illness_prop) +
-  geom_col(mapping = aes(x = RACE, y = prop, fill = MH1),
-           position = "fill") +
+  geom_col(
+    mapping = aes(x = RACE, y = prop, fill = MH1),
+    position = "fill"
+  ) +
   scale_fill_manual(values = color_scheme) +
-  labs(title = "Racial Proportions of Mental Illness Diagnoses, 2018",
-       x = "Race",
-       y = "Total",
-       fill = "Mental Illness") +
+  labs(
+    title = "Racial Proportions of Mental Illness Diagnoses, 2018",
+    x = "Race",
+    y = "Total",
+    fill = "Mental Illness"
+  ) +
   coord_flip()
 print(bar_graph)
 

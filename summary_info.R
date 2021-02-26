@@ -1,39 +1,39 @@
-#Loading packages in
+# Loading packages in
 library(dplyr)
 library(tidyverse)
 library(styler)
 
 data <- read.csv("data/small_MHCLD.csv")
 
-#Proportion of ages in MHCLD dataset
-Ages <- data %>% 
+# Proportion of ages in MHCLD dataset
+Ages <- data %>%
   group_by(AGE) %>%
-  summarise_all(sum) 
+  summarise_all(sum)
 
 
-Ages <- subset(Ages, select = -c(EDUC:MH1 , STATEFIP:REGION))
+Ages <- subset(Ages, select = -c(EDUC:MH1, STATEFIP:REGION))
 
 # Renaming rows
 
 
-Ages$AGE[Ages$AGE  == "1"]  <- "0-11 years old"
-Ages$AGE[Ages$AGE  == "2"]  <- "12-14 years old"
-Ages$AGE[Ages$AGE  == "3"]  <- "15-17 years old"
-Ages$AGE[Ages$AGE  == "4"]  <- "18-20 years old"
-Ages$AGE[Ages$AGE  == "5"]  <- "21-24 years old"
-Ages$AGE[Ages$AGE  == "6"]  <- "25-29 years old"
-Ages$AGE[Ages$AGE  == "7"]  <- "30-34 years old"
-Ages$AGE[Ages$AGE  == "8"]  <- "35-39 years old"
-Ages$AGE[Ages$AGE  == "9"]  <- "40-44 years old"
-Ages$AGE[Ages$AGE  == "10"]  <- "45-49 years old"
-Ages$AGE[Ages$AGE  == "11"]  <- "50-54 years old"
-Ages$AGE[Ages$AGE  == "12"]  <- "55-59 years old"
-Ages$AGE[Ages$AGE  == "13"]  <- "60-64 years old"
-Ages$AGE[Ages$AGE  == "14"]  <- "65 years and older"
+Ages$AGE[Ages$AGE == "1"] <- "0-11 years old"
+Ages$AGE[Ages$AGE == "2"] <- "12-14 years old"
+Ages$AGE[Ages$AGE == "3"] <- "15-17 years old"
+Ages$AGE[Ages$AGE == "4"] <- "18-20 years old"
+Ages$AGE[Ages$AGE == "5"] <- "21-24 years old"
+Ages$AGE[Ages$AGE == "6"] <- "25-29 years old"
+Ages$AGE[Ages$AGE == "7"] <- "30-34 years old"
+Ages$AGE[Ages$AGE == "8"] <- "35-39 years old"
+Ages$AGE[Ages$AGE == "9"] <- "40-44 years old"
+Ages$AGE[Ages$AGE == "10"] <- "45-49 years old"
+Ages$AGE[Ages$AGE == "11"] <- "50-54 years old"
+Ages$AGE[Ages$AGE == "12"] <- "55-59 years old"
+Ages$AGE[Ages$AGE == "13"] <- "60-64 years old"
+Ages$AGE[Ages$AGE == "14"] <- "65 years and older"
 
-#Renaming columns
+# Renaming columns
 
-Ages <- Ages %>% 
+Ages <- Ages %>%
   rename(
     Number_of_Mental_Health_Diagnoses_Reported = NUMMHS,
     Trauma_or_stressor_related_disorder_reported = TRAUSTREFLG,
@@ -48,26 +48,26 @@ Ages <- Ages %>%
     Alcohol_or_substance_related_disorder = ALCSUBFLG
   )
 
-##Proportion of races/ethnicities in MHCLD dataset
+## Proportion of races/ethnicities in MHCLD dataset
 
-Races <- data %>% 
+Races <- data %>%
   group_by(RACE) %>%
-  summarise_all(sum) 
+  summarise_all(sum)
 
 Races <- subset(Races, select = -c(AGE:ETHNIC, GENDER:MH1, STATEFIP:REGION))
 
 # Renaming rows
 
 
-Races$RACE[Races$RACE  == "1"]  <- "American Indian/Alaska Native"
-Races$RACE[Races$RACE  == "2"]  <- "Asian"
-Races$RACE[Races$RACE  == "3"]  <- "Black or African American"
-Races$RACE[Races$RACE  == "4"]  <- "Native Hawaiian or Other Pacific Islander"
-Races$RACE[Races$RACE  == "5"]  <- "White"
-Races$RACE[Races$RACE  == "6"]  <- "Another race alone or two or more races"
+Races$RACE[Races$RACE == "1"] <- "American Indian/Alaska Native"
+Races$RACE[Races$RACE == "2"] <- "Asian"
+Races$RACE[Races$RACE == "3"] <- "Black or African American"
+Races$RACE[Races$RACE == "4"] <- "Native Hawaiian or Other Pacific Islander"
+Races$RACE[Races$RACE == "5"] <- "White"
+Races$RACE[Races$RACE == "6"] <- "Another race alone or two or more races"
 
-#Renaming columns
-Races <- Races %>% 
+# Renaming columns
+Races <- Races %>%
   rename(
     Number_of_Mental_Health_Diagnoses_Reported = NUMMHS,
     Trauma_or_stressor_related_disorder_reported = TRAUSTREFLG,
@@ -82,22 +82,22 @@ Races <- Races %>%
     Alcohol_or_substance_related_disorder = ALCSUBFLG
   )
 
-###Proportion of sex in MHCLD dataset
+### Proportion of sex in MHCLD dataset
 
-Genders_sex <- data %>% 
+Genders_sex <- data %>%
   group_by(GENDER) %>%
-  summarise_all(sum) %>% 
+  summarise_all(sum) %>%
   slice(2:3)
 
-Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE,MH1, STATEFIP:REGION))
+Genders_sex <- subset(Genders_sex, select = -c(AGE:RACE, MH1, STATEFIP:REGION))
 
 # Renaming rows
 
-Genders_sex$GENDER[Genders_sex$GENDER  == "1"]  <- "Male"
-Genders_sex$GENDER[Genders_sex$GENDER  == "2"]  <- "Female"
+Genders_sex$GENDER[Genders_sex$GENDER == "1"] <- "Male"
+Genders_sex$GENDER[Genders_sex$GENDER == "2"] <- "Female"
 
-#Renaming columns
-Genders_sex <- Genders_sex %>% 
+# Renaming columns
+Genders_sex <- Genders_sex %>%
   rename(
     Number_of_Mental_Health_Diagnoses_Reported = NUMMHS,
     Trauma_or_stressor_related_disorder_reported = TRAUSTREFLG,
@@ -172,10 +172,10 @@ most_common_age <- "0-11 years old"
 
 # Most prevalent mental illness among minority groups
 
-only_minorities <- data %>% 
+only_minorities <- data %>%
   group_by(RACE) %>%
   select(MH1, RACE) %>%
-  filter(MH1 != "NA") %>% 
+  filter(MH1 != "NA") %>%
   group_by(MH1) %>%
   summarise("freq" = length(MH1)) %>%
   slice(-5) %>%
