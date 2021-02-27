@@ -79,27 +79,36 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 
 ### Teammate Responsibilities
 
-* Introductory Page
+* **Introductory Page (Morgan)**
   * Image or relevant graph/table
   * Main research questions
   * Data being used
   * Maybe some summary statistics of all data sets?
+  * Research Questions:
+    * How are mental health facilities distributed across the U.S.?
+    * At what rates are different demographics are impacted by various mental illnesses?
+    * ????
 
-* Interactive Page 1
+* **Interactive Page 1 (Caroline)**
+  * Shiny application with at least one control
+  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
+  * How are mental health facilities distributed across the U.S.?
+  * Possibly include race information on each state to look at demographic breakdown and amount of facilities available
+
+* **Interactive Page 2 (Adrian)**
+  * Shiny application with at least one control
+  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
+  * At what rates are different demographics are impacted by various mental illnesses?
+  * Look at picture in group chat
+
+* Interactive Page 3 ???
   * Shiny application with at least one control
   * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
 
-* Interactive Page 2
-  * Shiny application with at least one control
-  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
-
-* Interactive Page 3
-  * Shiny application with at least one control
-  * "Chart must be intentionally designed to reveal particular patterns in the data, and meet course standards of labeling // clarity"
-
-* Conclusion Page
+* **Conclusion Page (Nina)**
   * At least three takeaways from Analysis
   * Probably should include graphs/tables to further illustrate points
   * Ties to introduction page
 
-* Putting everything together and making sure it looks good
+* **Putting everything together and making sure it looks good (All)**
+  * colorblind color palette (scale_color_Okabelto, scale_fill_Okabelto)
