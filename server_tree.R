@@ -25,20 +25,6 @@ data$MH1 <- data$MH1 %>%
 clean_data <- data %>% 
   select(AGE, EDUC, RACE, ETHNIC, GENDER, MH1)
 
-# Tree Map Data Example
-
-var <- clean_data %>% 
-  select(AGE, GENDER, MH1) %>% 
-  filter(GENDER > 0) %>% 
-  filter(AGE == 6) %>% 
-  filter(GENDER == 1) %>% 
-  group_by(MH1) %>%
-  tally()
-
-ggplot(var, aes(area = n, fill = MH1)) +
-  geom_treemap()
-
-
 #Server
 
 server <- function(input, output){
