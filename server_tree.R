@@ -31,11 +31,21 @@ server <- function(input, output){
   output$treemap <- renderPlot({
     
     filtered <- clean_data %>%
-      filter(GENDER == input$sex) %>%
-      filter(AGE == input$age) %>%
-      filter(EDUC == input$education) %>%
-      filter(RACE == input$race) %>%
-      filter(ETHNIC == input$ethnicity) %>%
+      filter(if(input$sex == "all"){
+        GENDER %in% c(1, 2, -9)} else {
+          GENDER == input$sex}) %>%
+      filter(if(input$age == "all"){
+        AGE %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -9)} else {
+          AGE == input$age}) %>%
+      filter(if(input$education == "all"){
+        EDUC %in% c(1, 2, 3, 4, 5, -9)} else {
+          EDUC == input$education}) %>%
+      filter(if(input$race == "all"){
+        RACE %in% c(1, 2, 3, 4, 5, 6, -9)} else {
+          RACE == input$race}) %>%
+      filter(if(input$ethnicity == "all"){
+        ETHNIC %in% c(1, 2, 3, 4, -9)} else {
+         ETHNIC == input$ethnicity}) %>%
       group_by(MH1) %>%
       tally()
     
@@ -45,7 +55,6 @@ server <- function(input, output){
     treemap
   })
 }
-
 
 
 

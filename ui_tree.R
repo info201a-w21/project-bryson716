@@ -9,6 +9,7 @@ side_treemap <- sidebarPanel(
     inputId = "sex",
     label = "Select A Sex",
     choices = list(
+      "All" = "all",
       "Female" = 2,
       "Male" = 1
     )
@@ -17,6 +18,7 @@ side_treemap <- sidebarPanel(
     inputId = "race",
     label = "Select A Race",
     choices = list(
+      "All" = "all",
       "American Indian/Alaskan Native" = 1,
       "Asian" = 2,
       "Black/African American" = 3,
@@ -29,6 +31,7 @@ side_treemap <- sidebarPanel(
     inputId = "ethnicity",
     label = "Select An Ethnicity",
     choices = list(
+      "All" = "all",
       "Mexican" = 1,
       "Puerto Rican" = 2,
       "Other Hispanic or Latino Origin" = 3,
@@ -39,6 +42,7 @@ side_treemap <- sidebarPanel(
     inputId = "age",
     label = "Select An Age Range",
     choices = list(
+      "All" = "all",
       "0–11 Years " = 1,
       "12–14 Years" = 2,
       "15–17 Years" = 3,
@@ -59,6 +63,7 @@ side_treemap <- sidebarPanel(
     inputId = "education",
     label = "Select An Education Level",
     choices = list(
+      "All" = "all",
       "Special Education" = 1,
       "Grades 0-8" = 2,
       "Grades 9-11" = 3,
