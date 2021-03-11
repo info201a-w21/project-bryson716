@@ -74,7 +74,11 @@ side_treemap <- sidebarPanel(
 )
 
 main_treemap <- mainPanel(
-  plotlyOutput("treemap")
+  plotlyOutput("treemap"),
+  p("This interactive graph allows you to visualize how prevelant various mental
+    illnesses are in the population of your choice. Hover over a box with your mouse
+    to see the type of mental illness and what percentage of total mental illness it
+    makes up.")
 )
 
 ui <- fluidPage(
