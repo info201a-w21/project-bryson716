@@ -14,18 +14,17 @@ viz_one <- tabPanel("(Insert a title)"
                     )
 
 
-
-
 # Interactive Page 2 ------------------------------------------------------
 
 viz_two <- tabPanel("(Insert a title)"
                     )
 
 
-
 # Conclusion Page --------------------------------------------------------------
 
-concl <- tabPanel("Conclusion"
+concl <- tabPanel("Conclusion", 
+                  titlePanel("Main Takeaways"), 
+                             style = "text-align: center;"
                   )
 
 
