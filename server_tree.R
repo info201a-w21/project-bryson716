@@ -28,7 +28,7 @@ clean_data <- data %>%
 #Server
 
 server <- function(input, output){
-  output$treemap <- renderPlot({
+  output$treemap <- renderPlotly({
     
     filtered <- clean_data %>%
       filter(if(input$sex == "all"){
@@ -49,8 +49,20 @@ server <- function(input, output){
       group_by(MH1) %>%
       tally()
     
-    treemap <- ggplot(filtered, aes(area = n, fill = MH1)) +
-      geom_treemap()
+    palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
+    
+    treemap <- plot_ly(
+      filtered,
+      labels = ~ MH1,
+      parents = NA,
+      values = ~ n,
+      type = 'treemap',
+      hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>",
+      marker=list(colors = palette_OkabeIto_black)
+    )
+    
+    treemap <- treemap %>% 
+      layout(title = "Visualizing Mental Illness for Different Demographics")
     
     treemap
   })

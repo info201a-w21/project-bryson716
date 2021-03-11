@@ -74,7 +74,7 @@ side_treemap <- sidebarPanel(
 )
 
 main_treemap <- mainPanel(
-  plotOutput("treemap")
+  plotlyOutput("treemap")
 )
 
 ui <- fluidPage(

@@ -59,7 +59,8 @@ var <- clean %>%
   filter(AGE == 6) %>% 
   filter(GENDER == 1) %>% 
   group_by(MH1) %>%
-  tally()
+  tally() %>% 
+  mutate(percentage = n/sum(n))
 
 ggplot(var, aes(area = n, fill = MH1, label = MH1)) +
   geom_treemap()+
@@ -72,17 +73,41 @@ ggplot(var, aes(area = n, fill = MH1, label = MH1)) +
        )
 
 # How to incorporate Plotly below (Var is my dataframe name and the rest should be easy to figure out!)
-  plot_ly(
+ 
+
+ff <-  plot_ly(
   var,
   labels = ~ MH1,
   parents = NA,
   values = ~ n,
   type = 'treemap',
-  hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>"
+  hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>",
+  marker=list(colors = palette_OkabeIto_black)
 )
 
+ ff <- ff %>% 
+   layout(title = "Visualizing Mental Illness for Different Demographics")
+ 
   marker=list(colors = palette_OkabeIto_black)  
   
   
   treemap <- ggplot(filtered, aes(area = n, fill = MH1)) +
     geom_treemap()
+
+  # TRYNA GET THE MF PERCENTAGE
+  percent <- function(x, digits = 2, format = "f", ...) {      # Create user-defined function
+    paste0(formatC(x * 100, format = format, digits = digits, ...), "%")
+  }
+  var$percentage <- percent(var$percentage)
+  
+  plot_ly(
+    var,
+    labels = ~ MH1,
+    parents = NA,
+    values = ~ n,
+    type = 'treemap',
+    hovertemplate = "Mental Illness: %{label}<br> Percentage:", paste(var$percentage), "<extra></extra>",
+    marker=list(colors = palette_OkabeIto_black)
+  )
+
+    
