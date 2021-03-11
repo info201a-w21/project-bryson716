@@ -1,6 +1,7 @@
 # Server 
 library(tidyverse)
 library(plotly)
+library(viridis)
 
 data_one <- read.csv("data/small_MHCLD.csv")
 data_two <- read.csv("data/nmhss-puf-2018-csv.csv")  
