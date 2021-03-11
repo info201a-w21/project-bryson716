@@ -78,6 +78,11 @@ ggplot(var, aes(area = n, fill = MH1, label = MH1)) +
   parents = NA,
   values = ~ n,
   type = 'treemap',
-  hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>",
-  marker=list(colors = palette_OkabeIto_black)
+  hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>"
 )
+
+  marker=list(colors = palette_OkabeIto_black)  
+  
+  
+  treemap <- ggplot(filtered, aes(area = n, fill = MH1)) +
+    geom_treemap()
