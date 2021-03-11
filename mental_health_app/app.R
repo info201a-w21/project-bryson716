@@ -4,6 +4,10 @@
 # Load library packages 
 library(shiny)
 library(shinythemes)
+library(tidyverse)
+library(plotly)
+library(colorspace)
+library(colorblindr)
 
 # Source the app_server and app_ui 
 source("app_server.R")

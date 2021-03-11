@@ -1,7 +1,4 @@
 # Server 
-library(tidyverse)
-library(plotly)
-library(viridis)
 
 data_one <- read.csv("data/small_MHCLD.csv")
 data_two <- read.csv("data/nmhss-puf-2018-csv.csv")  
@@ -69,7 +66,7 @@ output$bar <- renderPlotly({
     theme_minimal() + 
     facet_wrap(~categories) + 
     scale_y_continuous(breaks = seq(0, 60, 10)) + 
-    scale_fill_viridis(discrete = TRUE) + 
+    scale_fill_OkabeIto() + 
     labs(fill = "Mental Illnesses", 
          color = "", 
          y = "Proporation Rate of People with Specific Mental Illnesses", 
