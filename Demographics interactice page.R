@@ -1,9 +1,14 @@
 library(treemap)
 library(tidyverse)
 library(treemapify)
+library(plotly)
 
 # Read in data
 all_data <- read.csv("data/small_MHCLD.csv")
+
+# Color-blind friendly scale
+palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
+
 
 # Getting the columns I need
 clean <- all_data %>% 
@@ -56,5 +61,23 @@ var <- clean %>%
   group_by(MH1) %>%
   tally()
 
-ggplot(var, aes(area = n, fill = "red")) +
-  geom_treemap()
+ggplot(var, aes(area = n, fill = MH1, label = MH1)) +
+  geom_treemap()+
+  geom_treemap_text(fontface = "italic", colour = "White", 
+                    place = "topleft", reflow = T,
+                    padding.x = unit(1, "mm"),
+                    padding.y = unit(2, "mm")
+                    ) +
+  labs(title = "Number of people with a certain mental illness"
+       )
+
+# How to incorporate Plotly below (Var is my dataframe name and the rest should be easy to figure out!)
+  plot_ly(
+  var,
+  labels = ~ MH1,
+  parents = NA,
+  values = ~ n,
+  type = 'treemap',
+  hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>",
+  marker=list(colors = palette_OkabeIto_black)
+)
