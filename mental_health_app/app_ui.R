@@ -31,7 +31,7 @@ concl <- tabPanel("Conclusion",
                     The results of our investigation show that 
                     the most affected racial group in both genders 
                     and age groups is", strong("American Indian/Alaska Native"), 
-                    "which is not too surprising, but this new understanding 
+                    ", which is not too surprising, but this new understanding 
                     should help address those issues regarding the 
                     margarlinzed groups facing oppression."),
                   p("We also found that depressive disorders are highly prevelant 
