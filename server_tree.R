@@ -57,12 +57,12 @@ server <- function(input, output){
       parents = NA,
       values = ~ n,
       type = 'treemap',
-      hovertemplate = "Mental Illness: %{label}<br>Count: %{value}<extra></extra>",
+      hovertemplate = "Mental Illness: %{label}<br>Contribution: %{percentRoot:%}<extra></extra>",
       marker=list(colors = palette_OkabeIto_black)
     )
     
     treemap <- treemap %>% 
-      layout(title = "Visualizing Mental Illness for Different Demographics")
+      layout(title = "Visualizing Mental Illnesses for Different Demographics")
     
     treemap
   })
