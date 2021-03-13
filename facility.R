@@ -8,6 +8,7 @@ library(rsconnect)
 library(maps)
 library(dplyr)
 mental_health <- read.csv("data/nmhss-puf-2018-csv.csv")
+
 colorscheme <- c("#E69F00", "#56B4E9", "#009E73", 
                  "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 mental_health_facilities <- full_join(mental_health, state_populations,
