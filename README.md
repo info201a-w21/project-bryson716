@@ -112,3 +112,15 @@ Unlike other assignments, you'll keep your code organized in multiple different 
 
 * **Putting everything together and making sure it looks good (All)**
   * colorblind color palette (scale_color_Okabelto, scale_fill_Okabelto)
+
+  ### Style Responsibilities
+
+  * Writing some CSS **(Nina)**
+    * Increase font size and change type to be more accessible?
+    * Change introduction image size to be smaller
+    * Better format introduction text (center it maybe?)
+  * Apply Styling to the UI file **(Nina)**
+  * Apply scale_fill_Okabelto or scale_color_Okabelto to all graphics
+  * Add blurbs explaining graphics **(Adrian)**
+  * Combine all elements into one UI, one server and one app **(Morgan)**
+  * Publish app to Shiny **(Caroline)**
