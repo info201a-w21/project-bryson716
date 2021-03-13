@@ -8,6 +8,10 @@ library(tidyverse)
 library(plotly)
 library(colorspace)
 library(colorblindr)
+library(countrycode)
+library(knitr)
+library(rsconnect)
+library(maps)
 
 # Source the app_server and app_ui 
 source("app_server.R")
