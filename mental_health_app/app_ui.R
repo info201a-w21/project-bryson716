@@ -41,26 +41,20 @@ side_map <- sidebarPanel(
   selectInput("facilities",
               label = h3("Type of Facility"),
               c("Total" = "Total Mental Health Facilities",
-                "Psychiatric Hospital" = "Psychiatric Hospitals",
-                "Separate inpatient psychiatric unit of a general hospital" =
+                "Psychiatric Hospitals",
                 "Separate Inpatient Psychiatric Units of a General Hospital",
-                "Residential treatment center for children" =
                 "Residential Treatment Centers for Children",
-                "Residential treatment center for adults" =
                 "Residential Treatment Centers for Adults",
-                "Other type of residential treatment facility" =
+                "Other Type of Residential Treatment Facility" =
                 "Other Types of Residential Facilities",
-                "Veterans Administration medical center (VAMC)" =
+                "Veterans Administration Medical Center (VAMC)" =
                 "Veterans Administration Medical Centers",
-                "Community mental health center (CMHC)" =
+                "Community Mental Health Center (CMHC)" =
                 "Community Mental Health Centers",
-                "Partial hospitalization/day treatment facility" =
                 "Partial Hospitalization/Day Treatment Facilities",
-                "Outpatient mental health facility" =
                 "Outpatient Mental Health Facilities",
-                "Multi-setting mental health facility" =
                 "Multi-setting Mental Health Facilities",
-                "Other" = "Other")),
+                "Other")),
   
   selectInput(inputId = "state",
               label = h3("Select a State"),

@@ -186,7 +186,7 @@ server <- function(input, output) {
 
   output$bar <- renderPlotly({
     p_data <- mhcld %>%
-      filter(GENDER != "Unknown")
+      filter(GENDER != "Unknown") %>%
       select(AGE, GENDER, RACE, MH1) %>% 
       group_by(AGE, GENDER, RACE) %>% 
       # n = the numbers of people who have specific mental illnesses
