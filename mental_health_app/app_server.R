@@ -195,8 +195,17 @@ server <- function(input, output) {
       group_by(MH1) %>%
       tally()
 
+<<<<<<< HEAD
     palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", 
                                 "#0072B2", "#D55E00", "#CC79A7", "#000000")
+=======
+<<<<<<< HEAD
+    palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+                                "#0072B2", "#D55E00", "#CC79A7", "#000000")
+=======
+    palette_okabeito_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
+>>>>>>> c004ad7cf0835c69f072b10317bad498afbf82ca
+>>>>>>> 9e0a82eb780b5f4ee4517a1ccbb04ffd0b60022b
 
     treemap <- plot_ly(
       filtered,
@@ -204,9 +213,17 @@ server <- function(input, output) {
       parents = NA,
       values = ~n,
       type = "treemap",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9e0a82eb780b5f4ee4517a1ccbb04ffd0b60022b
       hovertemplate = "Mental Illness: %{label}<br>Contribution: 
       %{percentRoot:%}<extra></extra>",
       marker = list(colors = palette_OkabeIto_black)
+=======
+      hovertemplate = "Mental Illness: %{label}<br>Contribution: %{percentRoot:%}<extra></extra>",
+      marker = list(colors = palette_okabeito_black)
+>>>>>>> c004ad7cf0835c69f072b10317bad498afbf82ca
     )
 
     treemap <- treemap %>%
