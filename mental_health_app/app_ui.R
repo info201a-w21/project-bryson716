@@ -61,6 +61,7 @@ intro <- tabPanel(
 
 side_map <- sidebarPanel(
   selectInput("facilities",
+<<<<<<< HEAD
     label = h3("Type of Facility"),
     c(
       "Total" = "Total Mental Health Facilities",
@@ -117,6 +118,58 @@ side_map <- sidebarPanel(
 )
 
 main_map <- mainPanel(
+=======
+              label = h3("Type of Facility"),
+              c("Total" = "Total Mental Health Facilities",
+                "Psychiatric Hospitals",
+                "Separate Inpatient Psychiatric Units of a General Hospital",
+                "Residential Treatment Centers for Children",
+                "Residential Treatment Centers for Adults",
+                "Other Type of Residential Treatment Facility" =
+                "Other Types of Residential Facilities",
+                "Veterans Administration Medical Center (VAMC)" =
+                "Veterans Administration Medical Centers",
+                "Community Mental Health Center (CMHC)" =
+                "Community Mental Health Centers",
+                "Partial Hospitalization/Day Treatment Facilities",
+                "Outpatient Mental Health Facilities",
+                "Multi-setting Mental Health Facilities",
+                "Other")),
+  
+  selectInput(inputId = "state",
+              label = h3("Select a State"),
+              c("Alabama (AL)" = "AL", "Alaska (AK)" = "AK",
+                "Arizona (AZ)" = "AZ", "Arkansas (AR)" = "AR",
+                "California (CA)" = "CA", "Colorado (CO)" = "CO",
+                "Connecticut (CT)" = "CT", "Delaware (DE)" = "DE",
+                "Florida (FL)" = "FL", "Georgia (GA)" = "GA",
+                "Hawaii (HI)" = "HI", "Idaho (ID)" = "ID",
+                "Illinois (IL)" = "IL", "Indiana (IN)" = "IN",
+                "Iowa (IA)" = "IA", "Kansas (KS)" = "KS",
+                "Kentucky (KY)" = "KY", "Louisiana (LA)" = "LA",
+                "Maine (ME)" = "ME", "Maryland (MD)" = "MD",
+                "Massachusetts (MA)" = "MA", "Michigan (MI)" = "MI",
+                "Minnesota (MN)" = "MN", "Mississippi (MS)" = "MS",
+                "Missouri (MO)" = "MO", "Montana (MT)" = "MT",
+                "Nebraska (NE)" = "NE", "Nevada (NV)" = "NV",
+                "New Hampshire (NH)" = "NH", "New Jersey (NJ)" = "NJ",
+                "New Mexico (NM)" = "NM", "New York (NY)" = "NY",
+                "North Carolina (NC)" = "NC",
+                "North Dakota (ND)" = "ND",
+                "Ohio (OH)" = "OH", "Oklahoma (OK)" = "OK",
+                "Oregon (OR)" = "OR", "Pennsylvania (PA)" = "PA",
+                "Rhode Island (RI)" = "RI",
+                "South Carolina (SC)" = "SC",
+                "South Dakota (SD)" = "SD", "Tennessee (TN)" = "TN",
+                "Texas (TX)" = "TX", "Utah (UT)" = "UT",
+                "Vermont (VT)" = "VT", "Virginia (VA)" = "VA",
+                "Washington (WA)" = "WA", "West Virginia (WV)" = "WV",
+                "Wisconsin (WI)" = "WI", "Wyoming (WY)" = "WY"
+              )),
+  p(em("*Some states may appear white due to insufficient data.")))
+
+main_map <-  mainPanel(
+>>>>>>> c004ad7cf0835c69f072b10317bad498afbf82ca
   plotlyOutput("facility_map"),
   plotlyOutput("facility_graph")
 )
