@@ -1,44 +1,122 @@
-# User Interface 
-
+# User Interface
 
 # Introduction Page -------------------------------------------------------
 
-intro <- tabPanel("Introduction", 
-                  titlePanel("The National Impact of Mental Illness"),
-                  p("Mental illnesses are extremely prevalent in America, impacting about 20% of the general population", a("(NIMH, 2021).", href = "https://www.nimh.nih.gov/health/statistics/mental-illness.shtml"),
-                    "Because of inequities in the nation, whether that be due to race, gender, or class, mental illnesses are more pervasive 
-                    among certain groups of people. In this website, we sought to investigate how mental illness is distributed across America, 
-                    as well as what treatment access looked like. Our key questions for this project were:",
-                    HTML("<ol><li>What is access to mental illness treatment like in America?</li>
-                         <li>How prevalent are different mental illnesses depending on an individual's identity?</li>")),
-                  p("Using interactive data visualizations, users are able to view where different types of treatment are available on a
-                  national level. They can also examine different patterns within specific identities for the prevalence of 
-                  13 mental illnesses. We tried to promote accessibility of information throughout our project so more people would be able
-                    to interact with our work. By doing so, we hope to increase the visibility of mental health issues in America."),
-                  img("", alt = "Three signs on a fence that say 'Don't give up,' 'You are not alone,' and 'You matter.'",
-                      src = "https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"),
-                  p(em("Picture taken by Dan Meyers in Salem, Oregon, United States")),
-                  h3("Background Information"),
-                  p("As of 2018, there are approximately", textOutput("facility_num", inline = T), "mental health facilities in America. The services at these facilities
-                  can include mental health referrals, substance abuse treatment, inpatient or residential treatment, partial hospitalization, different forms of therapy, and medication perscriptions.
-                    The most common mental illness treated at a state-run mental health facility was", textOutput("common_illness", inline = T),
-                    ", making up", textOutput("common_percent", inline = T), "of the sample. Other mental illnesses that were focused on included anxiety disorders, trauma-related disorders,
-                    schizophrenia, personality disorders, oppositional deviant disorder, conduct disorder, substance abuse disorders, ADD/ADHD, bipolar disorder, delirium, and
-                    pervasive developmental disorder."),
-                  h3("Recognition of Data Sets"),
-                  p("For this project, we utilized two 2018 data sets from the", a("Substance Abuse and Mental Health Data Archive.", href = "https://www.datafiles.samhsa.gov/"),
-                    "The first was the", a("Mental Health Client-Level Data Set,", href = "https://www.datafiles.samhsa.gov/study/mental-health-client-level-data-2018-mh-cld-2018-nid19097"),
-                    "a collection of all clients who received state-run mental health services. It contains information on individuals' mental illness diagnoses and demographics. The data
-                    was collected independently by each state. The second data set used was from the", a("National Mental Health Services Survey.", href = "https://www.datafiles.samhsa.gov/study/national-mental-health-services-survey-2018-n-mhss-2018-nid18766"),
-                    "It contains all known information about mental health treatment facilities in America. This was an optional survey, so data
-                    there is potentially missing data from some facilities.")
-                  )
+intro <- tabPanel(
+  "Introduction", 
+  titlePanel("The National Impact of Mental Illness"),
+  p(
+    "Mental illnesses are extremely prevalent in America, impacting about 20% 
+    of the general population", a("(NIMH, 2021).", 
+                                  href = "https://www.nimh.nih.gov/health/statistics/mental-illness.shtml"),
+    "Because of inequities in the nation, whether that be due to race, gender, 
+    or class, mental illnesses are more pervasive among certain groups of 
+    people. In this website, we sought to investigate how mental illness is 
+    distributed across America, as well as what treatment access looked like. 
+    Our key questions for this project were:",
+    HTML("<ol><li>What is access to mental illness treatment like in America?</li>
+                         <li>How prevalent are different mental illnesses depending on an individual's identity?</li>")
+  ),
+  p("Using interactive data visualizations, users are able to view where 
+  different types of treatment are available on a national level. They can 
+  also examine different patterns within specific identities for the prevalence 
+  of 13 mental illnesses. We tried to promote accessibility of information 
+  throughout our project so more people would be able to interact with our work. 
+  By doing so, we hope to increase the visibility of mental health issues 
+    in America."), img("",
+    alt = "Three signs on a fence that say 'Don't give up,' 'You are not alone,' and 'You matter.'",
+    src = "https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"),
+  p(em("Picture taken by Dan Meyers in Salem, Oregon, United States")),
+  h3("Background Information"),
+  p(
+    "As of 2018, there are approximately", textOutput("facility_num", inline = T), 
+    "mental health facilities in America. The services at these facilities
+    can include mental health referrals, substance abuse treatment, inpatient 
+    or residential treatment, partial hospitalization, different forms of 
+    therapy, and medication perscriptions.The most common mental illness 
+    treated at a state-run mental health facility was", 
+    textOutput("common_illness", inline = T),", making up", 
+    textOutput("common_percent", inline = T), "of the sample. Other mental 
+    illnesses that were focused on included anxiety disorders, trauma-related 
+    disorders,schizophrenia, personality disorders, oppositional deviant 
+    disorder, conduct disorder, substance abuse disorders, ADD/ADHD, bipolar 
+    disorder, delirium, and pervasive developmental disorder."),
+  h3("Recognition of Data Sets"),
+  p(
+    "For this project, we utilized two 2018 data sets from the", 
+    a("Substance Abuse and Mental Health Data Archive.", href = "https://www.datafiles.samhsa.gov/"),
+    "The first was the", a("Mental Health Client-Level Data Set,", 
+                           href = "https://www.datafiles.samhsa.gov/study/mental-health-client-level-data-2018-mh-cld-2018-nid19097"),
+    "a collection of all clients who received state-run mental health services. 
+    It contains information on individuals' mental illness diagnoses 
+    and demographics. The data was collected independently by each state. 
+    The second data set used was from the", a("National Mental Health Services Survey.", 
+                                              href = "https://www.datafiles.samhsa.gov/study/national-mental-health-services-survey-2018-n-mhss-2018-nid18766"),
+    "It contains all known information about mental health treatment 
+    facilities in America. This was an optional survey, so data
+    there is potentially missing data from some facilities."))
 
 
 # Interactive Page 1 ------------------------------------------------------
 
 side_map <- sidebarPanel(
   selectInput("facilities",
+    label = h3("Type of Facility"),
+    c(
+      "Total" = "Total Mental Health Facilities",
+      "Psychiatric Hospitals",
+      "Separate Inpatient Psychiatric Units of a General Hospital",
+      "Residential Treatment Centers for Children",
+      "Residential Treatment Centers for Adults",
+      "Other Type of Residential Treatment Facility" =
+        "Other Types of Residential Facilities",
+      "Veterans Administration Medical Center (VAMC)" =
+        "Veterans Administration Medical Centers",
+      "Community Mental Health Center (CMHC)" =
+        "Community Mental Health Centers",
+      "Partial Hospitalization/Day Treatment Facilities",
+      "Outpatient Mental Health Facilities",
+      "Multi-setting Mental Health Facilities",
+      "Other"
+    )
+  ),
+
+  selectInput(
+    inputId = "state",
+    label = h3("Select a State"),
+    c(
+      "Alabama (AL)" = "AL", "Alaska (AK)" = "AK",
+      "Arizona (AZ)" = "AZ", "Arkansas (AR)" = "AR",
+      "California (CA)" = "CA", "Colorado (CO)" = "CO",
+      "Connecticut (CT)" = "CT", "Delaware (DE)" = "DE",
+      "Florida (FL)" = "FL", "Georgia (GA)" = "GA",
+      "Hawaii (HI)" = "HI", "Idaho (ID)" = "ID",
+      "Illinois (IL)" = "IL", "Indiana (IN)" = "IN",
+      "Iowa (IA)" = "IA", "Kansas (KS)" = "KS",
+      "Kentucky (KY)" = "KY", "Louisiana (LA)" = "LA",
+      "Maine (ME)" = "ME", "Maryland (MD)" = "MD",
+      "Massachusetts (MA)" = "MA", "Michigan (MI)" = "MI",
+      "Minnesota (MN)" = "MN", "Mississippi (MS)" = "MS",
+      "Missouri (MO)" = "MO", "Montana (MT)" = "MT",
+      "Nebraska (NE)" = "NE", "Nevada (NV)" = "NV",
+      "New Hampshire (NH)" = "NH", "New Jersey (NJ)" = "NJ",
+      "New Mexico (NM)" = "NM", "New York (NY)" = "NY",
+      "North Carolina (NC)" = "NC",
+      "North Dakota (ND)" = "ND",
+      "Ohio (OH)" = "OH", "Oklahoma (OK)" = "OK",
+      "Oregon (OR)" = "OR", "Pennsylvania (PA)" = "PA",
+      "Rhode Island (RI)" = "RI",
+      "South Carolina (SC)" = "SC",
+      "South Dakota (SD)" = "SD", "Tennessee (TN)" = "TN",
+      "Texas (TX)" = "TX", "Utah (UT)" = "UT",
+      "Vermont (VT)" = "VT", "Virginia (VA)" = "VA",
+      "Washington (WA)" = "WA", "West Virginia (WV)" = "WV",
+      "Wisconsin (WI)" = "WI", "Wyoming (WY)" = "WY"
+    )
+  )
+)
+
+main_map <- mainPanel(
               label = h3("Type of Facility"),
               c("Total" = "Total Mental Health Facilities",
                 "Psychiatric Hospitals",
@@ -54,8 +132,7 @@ side_map <- sidebarPanel(
                 "Partial Hospitalization/Day Treatment Facilities",
                 "Outpatient Mental Health Facilities",
                 "Multi-setting Mental Health Facilities",
-                "Other")),
-  
+                "Other"),
   selectInput(inputId = "state",
               label = h3("Select a State"),
               c("Alabama (AL)" = "AL", "Alaska (AK)" = "AK",
@@ -85,16 +162,19 @@ side_map <- sidebarPanel(
                 "Vermont (VT)" = "VT", "Virginia (VA)" = "VA",
                 "Washington (WA)" = "WA", "West Virginia (WV)" = "WV",
                 "Wisconsin (WI)" = "WI", "Wyoming (WY)" = "WY"
-              )))
+              )),
+p(em("*Some states may appear white due to insufficient data.")))
 
 main_map <-  mainPanel(
   plotlyOutput("facility_map"),
   plotlyOutput("facility_graph")
 )
 
-viz_one <- tabPanel("Mental Health Facilities",
-                    sidebarLayout(side_map, main_map)
-                    )
+viz_one <- tabPanel(
+  "Mental Health Facilities",
+  icon = icon("globe-americas"),
+  sidebarLayout(side_map, main_map)
+)
 
 
 # Interactive Page 2 ------------------------------------------------------
@@ -171,31 +251,35 @@ side_treemap <- sidebarPanel(
 main_treemap <- mainPanel(
   plotlyOutput("treemap"),
   p("This interactive graph allows you to visualize how prevelant various mental
-    illnesses are in the population of your choice. Hover over a box with your mouse
-    to see the type of mental illness and what percentage of total mental illness it
-    makes up.")
+    illnesses are in the population of your choice. Hover over a box with your 
+    mouse to see the type of mental illness and what percentage of total mental 
+    illness it makes up.")
 )
 
-viz_two <- tabPanel("Mental Illness",
-                    sidebarLayout(side_treemap, main_treemap)
-                    )
+viz_two <- tabPanel(
+  "Mental Illness",
+  icon = icon("th"), 
+  sidebarLayout(side_treemap, main_treemap)
+)
 
 
 # Conclusion Page --------------------------------------------------------------
 
-concl <- tabPanel("Conclusion", 
-                  titlePanel("Project Takeaways"), 
-                             style = "text-align: center;",
-                  p("Before this study, we sought to investigate 
+concl <- tabPanel("Conclusion",
+  titlePanel("Project Takeaways"),
+  style = "text-align: center;",
+  p(
+    "Before this study, we sought to investigate 
                     how mental illness is distributed in the U.S. 
                     based on different demographic characteristics.  
                     The results of our investigation show that 
                     the most affected racial group in both genders 
-                    and age groups is", strong("American Indian/Alaska Native"), 
-                    ", which is not too surprising, but this new understanding 
+                    and age groups is", strong("American Indian/Alaska Native"),
+    ", which is not too surprising, but this new understanding 
                     should help address those issues regarding the 
-                    margarlinzed groups facing oppression."),
-                  p("We also found that depressive disorders are highly prevelant 
+                    margarlinzed groups facing oppression."
+  ),
+  p("We also found that depressive disorders are highly prevelant 
                     in older age groups compared to younger age groups. Due to
                     the stigma of mental health, society does not recognize
                     the struggles of older people struggling with their 
@@ -204,8 +288,8 @@ concl <- tabPanel("Conclusion",
                     to experience trauma-related disorders more than other age groups. 
                     In addition, Black and African American men who are older 
                     than 24 years old have the highest proporation rates in 
-                    schizophrenia."), 
-                  p("Unfortunately, our datasets did not show 
+                    schizophrenia."),
+  p("Unfortunately, our datasets did not show 
                   whether they received treatment and services for 
                   their mental illnesses. However, we learned a lot about those 
                   demographics in connection to gender, race, and age and 
@@ -213,12 +297,15 @@ concl <- tabPanel("Conclusion",
                   crticial thinking. This information in the interactive chart 
                   shown below can be used to develop targetted interventions 
                   aimed at improving mental health care towards the marginalized groups."),
-                  plotlyOutput("bar"))
+  plotlyOutput("bar")
+)
 
-ui <- navbarPage(theme = shinytheme("united"),
-                 "Mental Health in the U.S.", 
-                 intro, 
-                 viz_one,
-                 viz_two, 
-                 concl
-  ) 
+ui <- navbarPage(
+  fluid = FALSE, 
+  theme = shinytheme("united"),
+  "Mental Health in the U.S.",
+  intro,
+  viz_one,
+  viz_two,
+  concl
+)

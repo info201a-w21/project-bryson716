@@ -7,7 +7,7 @@ source("data/clean_mhcld.R")
 # Server
 server <- function(input, output) {
 
-  # Introduction Variables ---------------------------------------------------------
+# Introduction Variables ----------------------------------------------------
 
   output$facility_num <- renderText({
     facilities %>%
@@ -36,7 +36,7 @@ server <- function(input, output) {
   })
 
 
-  # First Visual (Map) --------------------------------------------------------------
+# First Visual (Map) -------------------------------------------------------
 
   facilities_input <- reactive({
     if (input$facilities == "Total Mental Health Facilities") {
@@ -158,8 +158,7 @@ server <- function(input, output) {
       ggplotly(tooltip = "text")
   })
 
-
-  # Second Visual (Treemap) ---------------------------------------------------------
+# Second Visual (Treemap) ----------------------------------------------------
 
   output$treemap <- renderPlotly({
     filtered <- mhcld %>%
@@ -196,7 +195,8 @@ server <- function(input, output) {
       group_by(MH1) %>%
       tally()
 
-    palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")
+    palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", 
+                                "#0072B2", "#D55E00", "#CC79A7", "#000000")
 
     treemap <- plot_ly(
       filtered,
@@ -204,7 +204,8 @@ server <- function(input, output) {
       parents = NA,
       values = ~n,
       type = "treemap",
-      hovertemplate = "Mental Illness: %{label}<br>Contribution: %{percentRoot:%}<extra></extra>",
+      hovertemplate = "Mental Illness: %{label}<br>Contribution: 
+      %{percentRoot:%}<extra></extra>",
       marker = list(colors = palette_OkabeIto_black)
     )
 
@@ -215,7 +216,7 @@ server <- function(input, output) {
   })
 
 
-  # Conclusion Plot ---------------------------------------------------------
+# Conclusion Plot -----------------------------------------------------------
 
   output$bar <- renderPlotly({
     p_data <- mhcld %>%
