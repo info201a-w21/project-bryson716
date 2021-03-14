@@ -7,7 +7,7 @@ source("data/clean_mhcld.R")
 # Server
 server <- function(input, output) {
 
-# Introduction Variables ----------------------------------------------------
+  # Introduction Variables ----------------------------------------------------
 
   output$facility_num <- renderText({
     facilities %>%
@@ -36,7 +36,7 @@ server <- function(input, output) {
   })
 
 
-# First Visual (Map) -------------------------------------------------------
+  # First Visual (Map) -------------------------------------------------------
 
   facilities_input <- reactive({
     if (input$facilities == "Total Mental Health Facilities") {
@@ -86,16 +86,18 @@ server <- function(input, output) {
         full_join(state_map, by = "LST") %>%
         select(CASEID, long, lat, group, order, LST, number) %>%
         distinct(order, .keep_all = TRUE) %>%
-        ggplot(mapping = aes(
-          x = long, y = lat, group = group,
-          LST = LST, fill = number,
-          text = paste(
-            "State:", LST,
-            "<br>Number of Facilities:",
-            number
-          )
-        ),
-        color = "gray", size = 0.3) +
+        ggplot(
+          mapping = aes(
+            x = long, y = lat, group = group,
+            LST = LST, fill = number,
+            text = paste(
+              "State:", LST,
+              "<br>Number of Facilities:",
+              number
+            )
+          ),
+          color = "gray", size = 0.3
+        ) +
         geom_polygon() +
         coord_map() +
         scale_fill_continuous(
@@ -156,7 +158,7 @@ server <- function(input, output) {
       ggplotly(tooltip = "text")
   })
 
-# Second Visual (Treemap) ----------------------------------------------------
+  # Second Visual (Treemap) ----------------------------------------------------
 
   output$treemap <- renderPlotly({
     filtered <- mhcld %>%
@@ -177,7 +179,7 @@ server <- function(input, output) {
       }) %>%
       filter(if (input$race == "all") {
         RACE %in% c(
-          "American Indian/Alaskan Native", "Asian",
+          "American Indian/Alaska Native", "Asian",
           "Black/African American",
           "Native Hawaiian/Pacific Islander", "White",
           "Multiracial/Other", -9
@@ -193,8 +195,10 @@ server <- function(input, output) {
       group_by(MH1) %>%
       tally()
 
-    palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", 
-                                "#0072B2", "#D55E00", "#CC79A7", "#000000")
+    palette_okabeito_black <- c(
+      "#E69F00", "#56B4E9", "#009E73", "#F0E442",
+      "#0072B2", "#D55E00", "#CC79A7", "#000000"
+    )
 
     treemap <- plot_ly(
       filtered,
@@ -204,7 +208,7 @@ server <- function(input, output) {
       type = "treemap",
       hovertemplate = "Mental Illness: %{label}<br>Contribution: 
       %{percentRoot:%}<extra></extra>",
-      marker = list(colors = palette_OkabeIto_black)
+      marker = list(colors = palette_okabeito_black)
     )
 
     treemap <- treemap %>%
@@ -214,7 +218,7 @@ server <- function(input, output) {
   })
 
 
-# Conclusion Plot -----------------------------------------------------------
+  # Conclusion Plot -----------------------------------------------------------
 
   output$bar <- renderPlotly({
     p_data <- mhcld %>%
