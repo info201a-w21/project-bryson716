@@ -61,10 +61,6 @@ intro <- tabPanel(
 
 side_map <- sidebarPanel(
   selectInput("facilities",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9e0a82eb780b5f4ee4517a1ccbb04ffd0b60022b
     label = h3("Type of Facility"),
     c(
       "Total" = "Total Mental Health Facilities",
@@ -121,10 +117,6 @@ side_map <- sidebarPanel(
 )
 
 main_map <- mainPanel(
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9e0a82eb780b5f4ee4517a1ccbb04ffd0b60022b
               label = h3("Type of Facility"),
               c("Total" = "Total Mental Health Facilities",
                 "Psychiatric Hospitals",
@@ -171,14 +163,9 @@ main_map <- mainPanel(
                 "Washington (WA)" = "WA", "West Virginia (WV)" = "WV",
                 "Wisconsin (WI)" = "WI", "Wyoming (WY)" = "WY"
               )),
-<<<<<<< HEAD
 p(em("*Some states may appear white due to insufficient data.")))
-=======
-  p(em("*Some states may appear white due to insufficient data.")))
->>>>>>> 9e0a82eb780b5f4ee4517a1ccbb04ffd0b60022b
 
 main_map <-  mainPanel(
->>>>>>> c004ad7cf0835c69f072b10317bad498afbf82ca
   plotlyOutput("facility_map"),
   plotlyOutput("facility_graph")
 )
