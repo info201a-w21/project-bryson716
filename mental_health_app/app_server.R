@@ -86,19 +86,17 @@ server <- function(input, output) {
         full_join(state_map, by = "LST") %>%
         select(CASEID, long, lat, group, order, LST, number) %>%
         distinct(order, .keep_all = TRUE) %>%
-        ggplot() +
-        geom_polygon(
-          mapping = aes(
-            x = long, y = lat, group = group,
-            LST = LST, fill = number,
-            text = paste(
-              "State:", LST,
-              "<br>Number of Facilities:",
-              number
-            )
-          ),
-          color = "gray", size = 0.3
-        ) +
+        ggplot(mapping = aes(
+          x = long, y = lat, group = group,
+          LST = LST, fill = number,
+          text = paste(
+            "State:", LST,
+            "<br>Number of Facilities:",
+            number
+          )
+        ),
+        color = "gray", size = 0.3) +
+        geom_polygon() +
         coord_map() +
         scale_fill_continuous(
           limits = c(
@@ -133,12 +131,12 @@ server <- function(input, output) {
         select(CHILDAD, ADOLES, YOUNGADULTS, ADULT, SENIORS) %>%
         summarise_each(funs = sum) %>%
         gather() %>%
-        ggplot() +
-        geom_col(aes(
+        ggplot(aes(
           x = factor(key, level = level_order), y = value,
           fill = key,
           text = paste("Number of Facilities:", value)
         )) +
+        geom_col() +
         scale_fill_manual(values = colorscheme, name = "Age Group") +
         scale_x_discrete(labels = c("0-12", "13-17", "18-25", "26-64",
           "65+",
