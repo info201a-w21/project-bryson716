@@ -185,7 +185,29 @@ main_map <- mainPanel(
 
 main_map <- mainPanel(
   plotlyOutput("facility_map"),
-  plotlyOutput("facility_graph")
+  plotlyOutput("facility_graph"),
+  h2("More about the graphs"),
+  p("We believe that the treatment of mental health is just as important as diagnoising
+    it; however, a variety of different mental health facilities are often sparse in
+    many areas. The graphs above visually display information about 
+    the number of different mental health facilities in each state."),
+  h3("Map of the USA"),
+    p("The map of the USA attempts to give viewers a wholistic look
+    at the different number of facilities each state has. To the right of the map
+      there is a color scale with a matching range of numbers which correlate to the 
+      colors of the states on the map. The input options on the left allow the viewer
+      to customize which type of facility the map will automatically update with. This
+      allows viewers to quickly spot trends in the number of mental health facilities within 
+      each state. Hovering over a state will provide the specific count within that state.", 
+      em("*The state slider does not affect the USA map values and values that
+      appear white are due to insufficient data.")),
+  h3("Charts about State Facilities"),
+  p("The bottom chart allows the viewer to see further information about mental health
+    facilities in each state. By selecting a state and/or type of facility 
+    from the dropdowns on the left, the bar chart is automatically updated to show 
+    how these types of facilities are distributed within each state. A viewer will be 
+    able to see, for example, how many psychiatric hospitals in New York are dedicated
+    to a certain age group like seniors or children.")
 )
 
 viz_one <- tabPanel(
@@ -268,10 +290,18 @@ side_treemap <- sidebarPanel(
 
 main_treemap <- mainPanel(
   plotlyOutput("treemap"),
+  h2("Visualizing Mental Health Demographics"),
   p("This interactive graph allows you to visualize how prevelant various mental
     illnesses are in the population of your choice. Hover over a box with your 
     mouse to see the type of mental illness and what percentage of total mental 
-    illness it makes up.")
+    illness it makes up. By creating a treemap, a viewer is clearly able to distinguish
+    patterns in mental health diagnoses and how certain races, sexes, or age ranges
+    are affected. One of the patterns that we found was how prevalent schizophrenia 
+    seemed to be amongst African American males. Upon further research this could be
+    attributed to the redefining in the 1960's of what schizophrenia was, which then 
+    attributed to a higher rate of male African-American protestors to be diagnosed 
+    with the disease. This and many other intriguing patterns can be easily visualized
+    allowing viewers to see themselves and others in this highly customizable treemap.")
 )
 
 viz_two <- tabPanel(
