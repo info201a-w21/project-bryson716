@@ -85,7 +85,8 @@ side_map <- sidebarPanel(
                 "Vermont (VT)" = "VT", "Virginia (VA)" = "VA",
                 "Washington (WA)" = "WA", "West Virginia (WV)" = "WV",
                 "Wisconsin (WI)" = "WI", "Wyoming (WY)" = "WY"
-              )))
+              )),
+  p(em("*Some states may appear white due to insufficient data.")))
 
 main_map <-  mainPanel(
   plotlyOutput("facility_map"),
