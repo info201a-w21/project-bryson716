@@ -17,20 +17,20 @@ server <- function(input, output) {
 
   output$common_illness <- renderText({
     mhcld %>%
-      filter(MH1 != "NA") %>%
-      group_by(MH1) %>%
-      summarise("freq" = length(MH1)) %>%
-      filter(freq == max(freq)) %>%
-      pull(MH1)
+      dplyr::filter(MH1 != "NA") %>%
+      dplyr::group_by(MH1) %>%
+      dplyr::summarise("freq" = length(MH1)) %>%
+      dplyr::filter(freq == max(freq)) %>%
+      dplyr::pull(MH1)
   })
 
   output$common_percent <- renderText({
     mhcld %>%
-      filter(MH1 != "NA") %>%
-      group_by(MH1) %>%
-      summarise("percent" = (length(MH1) / nrow(mhcld)) * 100) %>%
-      filter(percent == max(percent)) %>%
-      pull(percent) %>%
+      dplyr::filter(MH1 != "NA") %>%
+      dplyr::group_by(MH1) %>%
+      dplyr::summarise("percent" = (length(MH1) / nrow(mhcld)) * 100) %>%
+      dplyr::filter(percent == max(percent)) %>%
+      dplyr::pull(percent) %>%
       round(digits = 2) %>%
       paste0("%")
   })
@@ -84,7 +84,7 @@ server <- function(input, output) {
     {
       facilities_input() %>%
         full_join(state_map, by = "LST") %>%
-        select(CASEID, long, lat, group, order, LST, number) %>%
+        dplyr::select(CASEID, long, lat, group, order, LST, number) %>%
         distinct(order, .keep_all = TRUE) %>%
         ggplot(
           mapping = aes(
@@ -123,14 +123,14 @@ server <- function(input, output) {
     {
       facilities_input() %>%
         left_join(age_data, by = "CASEID") %>%
-        filter(LST.x == input$state) %>%
-        select(
+        dplyr::filter(LST.x == input$state) %>%
+        dplyr::select(
           CASEID, CHILDAD, ADOLES, YOUNGADULTS, ADULT, SENIORS,
           LST.x
         ) %>%
         na.omit() %>%
         distinct(CASEID, .keep_all = TRUE) %>%
-        select(CHILDAD, ADOLES, YOUNGADULTS, ADULT, SENIORS) %>%
+        dplyr::select(CHILDAD, ADOLES, YOUNGADULTS, ADULT, SENIORS) %>%
         summarise_each(funs = sum) %>%
         gather() %>%
         ggplot(aes(
@@ -162,22 +162,22 @@ server <- function(input, output) {
 
   output$treemap <- renderPlotly({
     filtered <- mhcld %>%
-      filter(if (input$sex == "all") {
+      dplyr::filter(if (input$sex == "all") {
         GENDER %in% c("Male", "Female", "Unknown")
       } else {
         GENDER == input$sex
       }) %>%
-      filter(if (input$age == "all") {
+      dplyr::filter(if (input$age == "all") {
         AGE %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, -9)
       } else {
         AGE == input$age
       }) %>%
-      filter(if (input$education == "all") {
+     dplyr::filter(if (input$education == "all") {
         EDUC %in% c(1, 2, 3, 4, 5, -9)
       } else {
         EDUC == input$education
       }) %>%
-      filter(if (input$race == "all") {
+      dplyr::filter(if (input$race == "all") {
         RACE %in% c(
           "American Indian/Alaska Native", "Asian",
           "Black/African American",
@@ -187,12 +187,12 @@ server <- function(input, output) {
       } else {
         RACE == input$race
       }) %>%
-      filter(if (input$ethnicity == "all") {
+      dplyr::filter(if (input$ethnicity == "all") {
         ETHNIC %in% c(1, 2, 3, 4, -9)
       } else {
         ETHNIC == input$ethnicity
       }) %>%
-      group_by(MH1) %>%
+      dplyr::group_by(MH1) %>%
       tally()
 
     palette_okabeito_black <- c(
@@ -222,15 +222,15 @@ server <- function(input, output) {
 
   output$bar <- renderPlotly({
     p_data <- mhcld %>%
-      filter(GENDER != "Unknown") %>%
-      select(AGE, GENDER, RACE, MH1) %>%
-      group_by(AGE, GENDER, RACE) %>%
+      dplyr::filter(GENDER != "Unknown") %>%
+      dplyr::select(AGE, GENDER, RACE, MH1) %>%
+      dplyr::group_by(AGE, GENDER, RACE) %>%
       # n = the numbers of people who have specific mental illnesses
       count(MH1) %>%
       # prop = the proportion rate of people with specific mental illnesses in
       # age and race groups
-      mutate(PROP = round((n / sum(n) * 100), digits = 2)) %>%
-      filter(PROP == max(PROP)) %>%
+      dplyr::mutate(PROP = round((n / sum(n) * 100), digits = 2)) %>%
+      dplyr::filter(PROP == max(PROP)) %>%
       arrange()
 
     categories <- cut(p_data$AGE,

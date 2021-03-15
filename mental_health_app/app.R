@@ -12,9 +12,9 @@ library(countrycode)
 library(rsconnect)
 library(maps)
 library(mapproj)
-# Source the app_server and app_ui 
-source("app_server.R")
+# Source the app_ui and app_server 
 source("app_ui.R")
+source("app_server.R")
 
 # Use ShinyApp() to display our project on Shiny 
 shinyApp(ui = ui, server = server)
