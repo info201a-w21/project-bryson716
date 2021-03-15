@@ -9,10 +9,9 @@ library(plotly)
 library(colorspace)
 library(colorblindr)
 library(countrycode)
-library(knitr)
 library(rsconnect)
 library(maps)
-
+library(mapproj)
 # Source the app_server and app_ui 
 source("app_server.R")
 source("app_ui.R")
