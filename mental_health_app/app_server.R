@@ -86,7 +86,8 @@ server <- function(input, output) {
         full_join(state_map, by = "LST") %>%
         select(CASEID, long, lat, group, order, LST, number) %>%
         distinct(order, .keep_all = TRUE) %>%
-        ggplot(
+        ggplot() + 
+        geom_polygon(
           mapping = aes(
             x = long, y = lat, group = group,
             LST = LST, fill = number,
@@ -96,9 +97,8 @@ server <- function(input, output) {
               number
             )
           ),
-          color = "gray", size = 0.3
+          color = "black", size = 0.1
         ) +
-        geom_polygon() +
         coord_map() +
         scale_fill_continuous(
           limits = c(
