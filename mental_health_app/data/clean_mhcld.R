@@ -1,7 +1,7 @@
 #Data cleaning for MHCLD 2018 Data Set
 library(tidyverse)
 
-data <- read.csv("data/small_MHCLD.csv")
+data <- read.csv("data/Small_MHCLD.csv")
 
 data$GENDER <- data$GENDER %>% 
   str_replace_all("1", "Male") %>% 

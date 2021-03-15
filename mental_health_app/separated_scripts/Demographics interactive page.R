@@ -4,7 +4,7 @@ library(treemapify)
 library(plotly)
 
 # Read in data
-all_data <- read.csv("data/small_MHCLD.csv")
+all_data <- read.csv("data/Small_MHCLD.csv")
 
 # Color-blind friendly scale
 palette_OkabeIto_black <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000")

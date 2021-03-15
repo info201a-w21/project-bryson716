@@ -4,7 +4,7 @@ library(treemapify)
 library(shiny)
 library(plotly)
 
-data <- read.csv("data/small_MHCLD.csv")
+data <- read.csv("data/Small_MHCLD.csv")
 
 #Clean data
 data$MH1 <- data$MH1 %>%
