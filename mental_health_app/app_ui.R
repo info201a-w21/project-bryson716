@@ -77,7 +77,6 @@ side_map <- sidebarPanel(
     c(
       "Total" = "Total Mental Health Facilities",
       "Psychiatric Hospitals",
-      "Separate Inpatient Psychiatric Units of a General Hospital",
       "Residential Treatment Centers for Children",
       "Residential Treatment Centers for Adults",
       "Other Type of Residential Treatment Facility" =
@@ -86,7 +85,6 @@ side_map <- sidebarPanel(
         "Veterans Administration Medical Centers",
       "Community Mental Health Center (CMHC)" =
         "Community Mental Health Centers",
-      "Partial Hospitalization/Day Treatment Facilities",
       "Outpatient Mental Health Facilities",
       "Multi-setting Mental Health Facilities",
       "Other"
@@ -142,7 +140,6 @@ main_map <- mainPanel(
       "Veterans Administration Medical Centers",
     "Community Mental Health Center (CMHC)" =
       "Community Mental Health Centers",
-    "Partial Hospitalization/Day Treatment Facilities",
     "Outpatient Mental Health Facilities",
     "Multi-setting Mental Health Facilities",
     "Other"
@@ -184,7 +181,7 @@ main_map <- mainPanel(
 
 main_map <- mainPanel(
   plotlyOutput("facility_map"),
-  plotlyOutput("facility_graph"),
+  plotOutput("facility_graph"),
   h2("More about the graphs"),
   p("We believe that the treatment of mental health is just as important as diagnoising
     it; however, mental health facilities are often sparse in

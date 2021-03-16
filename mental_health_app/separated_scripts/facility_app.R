@@ -22,11 +22,8 @@ ui <- fluidPage(
             selectInput("facilities",
                         label = h3("Type of Facility"),
                                    c("Total" = "Total Mental Health Facilities",
-                                     "Psychiatric Hospital" =
+                                     "Psychiatric Hospital" = 
                                          "Psychiatric Hospitals",
-                                     "Separate inpatient psychiatric unit of a
-                                     general hospital" = "Separate Inpatient
-                                     Psychiatric Units of a General Hospital",
                                      "Residential treatment center for
                                      children" = "Residential Treatment Centers
                                      for Children",
@@ -82,7 +79,7 @@ ui <- fluidPage(
                         ))),
         mainPanel(
             plotlyOutput("facility_map"),
-            plotlyOutput("facility_graph")
+            plotOutput("facility_graph")
     ),
 ),
 )
@@ -154,7 +151,7 @@ server <- function(input, output) {
     } %>%
             ggplotly(tooltip = "text")
         })
-    output$facility_graph <- renderPlotly({
+    output$facility_graph <- renderPlot({
         level_order <- c("CHILDAD", "ADOLES", "YOUNGADULTS", "ADULT", "SENIORS")
         {facilities_input() %>%
                 left_join(age_data, by = "CASEID") %>%

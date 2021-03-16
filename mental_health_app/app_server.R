@@ -45,10 +45,6 @@ server <- function(input, output) {
     if (input$facilities == "Psychiatric Hospitals") {
       dataset <- final_psych
     }
-    if (input$facilities == "Separate Inpatient Psychiatric Units of a
-            General Hospital") {
-      dataset <- final_separate
-    }
     if (input$facilities == "Residential Treatment Centers for Children") {
       dataset <- final_res_child
     }
@@ -63,10 +59,6 @@ server <- function(input, output) {
     }
     if (input$facilities == "Community Mental Health Centers") {
       dataset <- final_com
-    }
-    if (input$facilities == "Partial Hospitalization/Day Treatment
-            Facilities") {
-      dataset <- final_partial
     }
     if (input$facilities == "Outpatient Mental Health Facilities") {
       dataset <- final_outpatient
@@ -120,8 +112,7 @@ server <- function(input, output) {
       ggplotly(tooltip = "text")
   })
 
-  output$facility_graph <- renderPlotly({
-    level_order <- c("CHILDAD", "ADOLES", "YOUNGADULTS", "ADULT", "SENIORS")
+  output$facility_graph <- renderPlot({
     {
       facilities_input() %>%
         left_join(age_data, by = "CASEID") %>%
@@ -135,29 +126,26 @@ server <- function(input, output) {
         dplyr::select(CHILDAD, ADOLES, YOUNGADULTS, ADULT, SENIORS) %>%
         summarise_each(funs = sum) %>%
         gather() %>%
-        ggplot(aes(
-          x = factor(key, level = level_order), y = value,
-          fill = key,
+        ggplot() +
+        geom_col(
+          aes(x = key, y = value, fill = key,
           text = paste("Number of Facilities:", value)
         )) +
-        geom_col() +
-        scale_fill_manual(values = colorscheme, name = "Age Group") +
-        scale_x_discrete(labels = c("0-12", "13-17", "18-25", "26-64",
-          "65+",
-          labels = c(
-            "0-12", "13-17",
-            "18-25", "26-64",
-            "65+"
-          )
-        )) +
+        scale_fill_manual(values = colorscheme, name = "Ages Accepted",
+                          limits = c("CHILDAD", "ADOLES", "YOUNGADULTS",
+                                     "ADULT", "SENIORS"),
+                          labels = c("0-12", "13-17", "18-25", "26-64",
+                                     "65+")) +
+        scale_x_discrete(limits = c("CHILDAD", "ADOLES", "YOUNGADULTS", "ADULT",
+                                    "SENIORS"),
+                         labels=c("0-12", "13-17", "18-25", "26-64", "65+")) +
         labs(title = str_wrap(paste(
           "Number of", input$facilities,
           "in", input$state, ", 2018"
         ), 60)) +
         xlab("Ages Accepted") +
         ylab("Number of Facilities")
-    } %>%
-      ggplotly(tooltip = "text")
+    }
   })
 
   # Second Visual (Treemap) ----------------------------------------------------
