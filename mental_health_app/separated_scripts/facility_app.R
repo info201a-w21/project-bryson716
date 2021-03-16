@@ -10,11 +10,8 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
-library(countrycode)
-library(knitr)
 library(stringr)
 library(rsconnect)
-library(maps)
 library(dplyr)
 source("facility.R")
 # Define UI for application that draws a histogram

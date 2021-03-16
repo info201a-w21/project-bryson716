@@ -83,8 +83,10 @@ server <- function(input, output) {
   output$facility_map <- renderPlotly({
     {
       facilities_input() %>%
+        dplyr::select(LST, number) %>%
+        distinct() %>%
         full_join(state_map, by = "LST") %>%
-        dplyr::select(CASEID, long, lat, group, order, LST, number) %>%
+        dplyr::select(long, lat, group, order, LST, number) %>%
         distinct(order, .keep_all = TRUE) %>%
         ggplot() + 
         geom_polygon(
